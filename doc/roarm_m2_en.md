@@ -270,11 +270,13 @@ roarm.joint_angle_ctrl(joint=1,angle=90,speed=1000,acc=50)
   
   -`sta_password:` type : str
 
+<!--
 #### `wifi_info_get()`
 - **Function:** Get WiFi information
 
 - **Return:**list[str]
   -[WiFi mode at startup, STA name, STA password, AP name, AP password, ip address, WIFI signal strength in STA mode]
+-->
 
 #### `wifi_config_creat_by_status()`
 - **Function:** Generate WiFi configuration file based on current WiFi status

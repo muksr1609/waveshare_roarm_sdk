@@ -6,20 +6,30 @@ import time
 import math
 
 from roarm_sdk.logger import setup_logging
-from roarm_sdk.utils import calibration_parameters
+from roarm_sdk.utils import calibration_parameters, RoarmDataException
 from roarm_sdk.common import JsonCmd, DataProcessor
 
 
 class CommandGenerator(DataProcessor):
 
-    def __init__(self, roarm_type=None, debug=False):
+    def __init__(self, roarm_type=None, debug=False, gripper_type="angular_direct"):
         """
         Args:
             roarm_type : "roarm_m2" or "roarm_m3, type : str
             debug : whether show debug info
+            gripper_type : "angular_direct" or "angular_gear", default "angular_direct"
         """
+        if roarm_type not in ("roarm_m2", "roarm_m3"):
+            raise RoarmDataException(
+                f"roarm_type should be 'roarm_m2' or 'roarm_m3', but received {roarm_type}"
+            )
+        if gripper_type not in ("angular_direct", "angular_gear"):
+            raise RoarmDataException(
+                f"gripper_type should be 'angular_direct' or 'angular_gear', but received {gripper_type}"
+            )
         self.type = roarm_type
         self.debug = debug
+        self.gripper_type = gripper_type
         setup_logging(self.debug)
         self.log = logging.getLogger(__name__)
         self.calibration_parameters = calibration_parameters

@@ -42,7 +42,7 @@ We support Python2, Python3.5 or later.
         - [ap_set(ssid,password)](#ap_setssidpassword)
         - [sta_set(ssid,password)](#sta_setssidpassword)
         - [apsta_set(ap_ssid,ap_password,sta_ssid,sta_password)](#apstasetap_ssidap_passwordstassidsta_password)
-        - [wifi_info_get()](#wifi_info_get)
+        <!-- - [wifi_info_get()](#wifi_info_get) -->
         - [wifi_config_creat_by_status()](#wifi_config_creat_by_status)
         - [wifi_config_creat_by_input(ap_ssid,ap_password,sta_ssid,sta_password)](#wifi_config_creat_by_inputap_ssidap_passwordstassidsta_password)
         - [wifi_stop()](#wifi_stop)

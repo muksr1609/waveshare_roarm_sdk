@@ -26,7 +26,7 @@ pip install roarm-sdk==0.1.0
 ### Source code
 
 ```bash
-git clone https://https://github.com/waveshareteam/waveshare_roarm_sdk.git <your-path>
+git clone https://github.com/waveshareteam/waveshare_roarm_sdk.git <your-path>
 cd <your-path>/waveshare_roarm_sdk
 # Install
 [sudo] python2 setup.py install
@@ -48,7 +48,7 @@ roarm = roarm(roarm_type="roarm_m2", port="/dev/ttyUSB0", baudrate=115200)
 
 The [`demo`](./demo) directory stores some test case files.
 
-You can find out which interfaces roarm_sdk provides in [`./doc/README.md`](./doc/RADME.md).
+You can find out which interfaces roarm_sdk provides in [`./doc/README.md`](./doc/README.md).
 
 ![jaywcjlove/sb](https://jaywcjlove.github.io/sb/lang/chinese.svg)   ![jaywcjlove/sb](https://jaywcjlove.github.io/sb/lang/english.svg)
 

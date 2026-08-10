@@ -16,7 +16,7 @@ class roarm(CommandGenerator):
     """
     Roarm Python API communication class.
     """
-    def __init__(self, roarm_type=None, port=None, baudrate=115200, host=None, timeout=0.1, debug=False, thread_lock=True):
+    def __init__(self, roarm_type=None, port=None, baudrate=115200, host=None, timeout=0.1, debug=False, thread_lock=True, gripper_type="angular_direct"):
         """
         Args:
             roarm_type    : port string
@@ -25,9 +25,10 @@ class roarm(CommandGenerator):
             host          : host string
             timeout       : default 0.1
             debug         : whether show debug info
+            gripper_type  : "angular_direct" or "angular_gear", default "angular_direct"
         """
         self.type = roarm_type
-        super(roarm, self).__init__(self.type,debug)
+        super(roarm, self).__init__(self.type, debug, gripper_type)
         self.calibration_parameters = calibration_parameters
         self.thread_lock = thread_lock
         self.host =None            
@@ -193,4 +194,8 @@ class roarm(CommandGenerator):
     def disconnect(self):
         """Disconnect from the roarm 
         """
-        self._serial_port.close()
+        if self.host:
+            self.host = None
+        elif hasattr(self, "_serial_port") and self._serial_port is not None:
+            if self._serial_port.is_open:
+                self._serial_port.close()

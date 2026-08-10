@@ -52,7 +52,7 @@ def check_joints_robot_limit(values, param_type, roarm_type, robot_limit):
     
     values_len = len(robot_limit[roarm_type]["joint"])
     if len(values) != values_len:
-        raise RoarmDataException("The length of {param_type} must be {values_len}.")
+        raise RoarmDataException(f"The length of {param_type} must be {values_len}.")
     for index, value in enumerate(values):
         limit_min = robot_limit[roarm_type][f"{param_type}_min"][index]
         limit_max = robot_limit[roarm_type][f"{param_type}_max"][index]
@@ -66,35 +66,30 @@ def check_joint_speed_acc(param_type, value, valid_range, value_type):
     check_value_type(param_type, value_type, int)
     min_value, max_value = valid_range
     if not min_value <= value <= max_value:
-        print(
+        raise RoarmDataException(
             f"{param_type} value not right, should be between {min_value} ~ {max_value}, "
             f"but received {value}."
-        )   
-        if value < min_value:
-            value = min_value + 10
-        elif value > max_value:
-            value = max_value - 10
-                             
+        )
 def calibration_parameters(**kwargs):
     robot_limit = {
         "roarm_m2": {
             "joint": [1, 2, 3, 4],            
-            "radians_min": [-3.3, -1.9, -1.2, -0.2],
+            "radians_min": [-3.3, -1.9, -0.2, -0.2],
             "radians_max": [3.3, 1.9, 3.3, 1.9],            
-            "angles_min": [-190, -110, -70, -10],
+            "angles_min": [-190, -110, -20, -10],
             "angles_max": [190, 110, 190, 100],
-            "positions_min": [-500, -500, 0, 0],
+            "positions_min": [-500, -500, -600, 0],
             "positions_max": [500, 500, 600, 90],
             "torques_min": [1, 1, 1, 1],
             "torques_max": [1000, 1000, 1000, 1000],
         },     
         "roarm_m3": {
             "joint": [1, 2, 3, 4, 5, 6],            
-            "radians_min": [-3.3, -1.9, -1.2, -1.9, -3.3, -0.2],
+            "radians_min": [-3.3, -1.9, -0.2, -1.9, -3.3, -0.2],
             "radians_max": [3.3, 1.9, 3.3, 1.9, 3.3, 1.9],            
-            "angles_min": [-190, -110, -70, -110, -190, -10],
+            "angles_min": [-190, -110, -20, -110, -190, -10],
             "angles_max": [190, 110, 190, 110, 190, 100],
-            "positions_min": [-500, -500, 0, -90,-180, 0],
+            "positions_min": [-500, -500, -600, -90,-180, 0],
             "positions_max": [500, 500, 600, 90, 180, 90],
             "torques_min": [1, 1, 1, 1, 1, 1],
             "torques_max": [1000, 1000, 1000, 1000, 1000, 1000],
@@ -133,5 +128,4 @@ def calibration_parameters(**kwargs):
                 parameter_validations[parameter](value, value_type, roarm_type, kwargs)
             except RoarmDataException as e:
                 print(f"Error in parameter {parameter}: {str(e)}")
-                raise e  
-     
+                raise e

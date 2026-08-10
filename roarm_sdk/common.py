@@ -127,91 +127,101 @@ def handle_dynamic_adaptation_set(roarm_type,command,command_data):
     command = switch_dict[roarm_type](command,command_data)
     return command
             
-def handle_joint_radian_ctrl(roarm_type,command,command_data):
+def handle_joint_radian_ctrl(roarm_type,command,command_data,gripper_type="angular_direct"):
     switch_dict = {
         "roarm_m2": 4,
         "roarm_m3": 6,
     }
     gripper = switch_dict[roarm_type]
-    if command_data[0] == gripper: 
-        command_data[1] = math.pi - command_data[1]        
+    if command_data[0] == gripper and gripper_type == "angular_direct":
+        command_data[1] = math.pi - command_data[1]
     command.update({"joint": command_data[0], "rad": command_data[1], "spd": command_data[2], "acc": command_data[3]})
     return command
     
-def handle_m2_joints_radian(command,command_data):
-    command_data[3] = math.pi - command_data[3]
+def handle_m2_joints_radian(command,command_data,gripper_type="angular_direct"):
+    if gripper_type == "angular_direct":
+        command_data[3] = math.pi - command_data[3]
     command.update({"base": command_data[0], "shoulder": command_data[1], "elbow": command_data[2], "hand": command_data[3], "spd": command_data[4], "acc": command_data[5]})
     return command
     
-def handle_m3_joints_radian(command,command_data):
-    command_data[5] = math.pi - command_data[5]  
+def handle_m3_joints_radian(command,command_data,gripper_type="angular_direct"):
+    if gripper_type == "angular_direct":
+        command_data[5] = math.pi - command_data[5]
     command.update({"base": command_data[0], "shoulder": command_data[1], "elbow": command_data[2], "wrist": command_data[3], "roll": command_data[4], "hand": command_data[5], "spd": command_data[6], "acc": command_data[7]})
     return command
         
-def handle_joints_radian_ctrl(roarm_type,command,command_data):    
+def handle_joints_radian_ctrl(roarm_type,command,command_data,gripper_type="angular_direct"):
     switch_dict = {
         "roarm_m2": handle_m2_joints_radian,
         "roarm_m3": handle_m3_joints_radian,
     }
-    command = switch_dict[roarm_type](command,command_data)
+    command = switch_dict[roarm_type](command,command_data,gripper_type)
     return command
         
-def handle_joint_angle_ctrl(roarm_type,command,command_data):
+def handle_joint_angle_ctrl(roarm_type,command,command_data,gripper_type="angular_direct"):
     switch_dict = {
         "roarm_m2": 4,
         "roarm_m3": 6,
     }
     gripper = switch_dict[roarm_type]
-    if command_data[0] == gripper: 
-        command_data[1] = 180 - command_data[1]  
+    if command_data[0] == gripper and gripper_type == "angular_direct":
+        command_data[1] = 180 - command_data[1]
     command_data[2] = (command_data[2] * 180) / 2048
     command_data[3] = (command_data[3] * 180) / (254*100)         
     command.update({"joint": command_data[0], "angle": command_data[1], "spd": command_data[2], "acc": command_data[3]})
     return command
     
-def handle_m2_joints_angle(command,command_data):
-    command_data[3] = 180 - command_data[3]  
+def handle_m2_joints_angle(command,command_data,gripper_type="angular_direct"):
+    if gripper_type == "angular_direct":
+        command_data[3] = 180 - command_data[3]
     command_data[4] = (command_data[4] * 180) / 2048
     command_data[5] = (command_data[5] * 180) / (254*100)
     command.update({"b": command_data[0],"s": command_data[1],"e": command_data[2],"h": command_data[3], "spd": command_data[4], "acc": command_data[5]})  
     return command
     
-def handle_m3_joints_angle(command,command_data):
-    command_data[5] = 180 - command_data[5]
+def handle_m3_joints_angle(command,command_data,gripper_type="angular_direct"):
+    if gripper_type == "angular_direct":
+        command_data[5] = 180 - command_data[5]
     command_data[6] = (command_data[6] * 180) / 2048
     command_data[7] = (command_data[7] * 180) / (254*100)   
     command.update({"b": command_data[0],"s": command_data[1],"e": command_data[2],"t": command_data[3],"r": command_data[4],"h": command_data[5], "spd": command_data[6], "acc": command_data[7]})  
     return command
     
-def handle_joints_angle_ctrl(roarm_type,command,command_data):
+def handle_joints_angle_ctrl(roarm_type,command,command_data,gripper_type="angular_direct"):
     switch_dict = {
         "roarm_m2": handle_m2_joints_angle,
         "roarm_m3": handle_m3_joints_angle,
     }
-    command = switch_dict[roarm_type](command,command_data)
+    command = switch_dict[roarm_type](command,command_data,gripper_type)
     return command
             
 def handle_gripper_mode_set(roarm_type,command,command_data):
     command.update({"name": "boot", "step": f'{{"T":1,"mode":{command_data[0]}}}'})
     return command
 
-def handle_m2_pose(command,command_data):
-    command_data[3] = math.pi - ((command_data[3] * math.pi) / 180)
+def handle_m2_pose(command,command_data,gripper_type="angular_direct"):
+    gripper_rad = (command_data[3] * math.pi) / 180
+    if gripper_type == "angular_direct":
+        gripper_rad = math.pi - gripper_rad
+    command_data[3] = gripper_rad
     command.update({"x": command_data[0], "y": command_data[1], "z": command_data[2], "t": command_data[3]})
     return command
     
-def handle_m3_pose(command,command_data):
-    command_data[3:5] = [(command_data * math.pi) / 180 for command_data in command_data[3:5]] 
-    command_data[5] = math.pi - ((command_data[5] * math.pi) / 180)
+def handle_m3_pose(command,command_data,gripper_type="angular_direct"):
+    command_data[3:5] = [(val * math.pi) / 180 for val in command_data[3:5]]
+    gripper_rad = (command_data[5] * math.pi) / 180
+    if gripper_type == "angular_direct":
+        gripper_rad = math.pi - gripper_rad
+    command_data[5] = gripper_rad
     command.update({"x": command_data[0], "y": command_data[1], "z": command_data[2], "t": command_data[3], "r": command_data[4], "g": command_data[5]})
     return command
         
-def handle_pose_ctrl(roarm_type,command,command_data):
+def handle_pose_ctrl(roarm_type,command,command_data,gripper_type="angular_direct"):
     switch_dict = {
         "roarm_m2": handle_m2_pose,
         "roarm_m3": handle_m3_pose,
     }
-    command = switch_dict[roarm_type](command,command_data)
+    command = switch_dict[roarm_type](command,command_data,gripper_type)
     return command
     
 def handle_wifi_on_boot(roarm_type,command,command_data):
@@ -226,11 +236,12 @@ def handle_ap_sta_set(roarm_type,command,command_data):
     command.update({"ap_ssid":command_data[0], "ap_password":command_data[1], "sta_ssid":command_data[2], "sta_password":command_data[3]})
     return command
 
-def handle_m2_feedback(valid_data,data):
+def handle_m2_feedback(valid_data,data,gripper_type="angular_direct"):
     valid_data.append(data['b'])    
     valid_data.append(data['s'])
     valid_data.append(data['e']) 
-    data['t'] = math.pi - data['t'] 
+    if gripper_type == "angular_direct":
+        data['t'] = math.pi - data['t']
     valid_data.append(data['t'])
 #    valid_data.append(data['torB'])    
 #    valid_data.append(data['torS'])
@@ -238,14 +249,15 @@ def handle_m2_feedback(valid_data,data):
 #    valid_data.append(data['torH'])     
     return valid_data
 
-def handle_m3_feedback(valid_data,data): 
+def handle_m3_feedback(valid_data,data,gripper_type="angular_direct"): 
     valid_data.append(data['tit'])   
     valid_data.append(data['b'])    
     valid_data.append(data['s'])
     valid_data.append(data['e'])  
     valid_data.append(data['t'])
     valid_data.append(data['r'])
-    data['g'] = math.pi - data['g']  
+    if gripper_type == "angular_direct":
+        data['g'] = math.pi - data['g']
     valid_data.append(data['g'])
 #    valid_data.append(data['tB'])    
 #    valid_data.append(data['tS'])
@@ -289,7 +301,12 @@ class DataProcessor(object):
                          
         if command_data:
             if genre in switch_dict:
-                command = switch_dict[genre](self.type,command,command_data) 
+                if genre in (JsonCmd.JOINT_RADIAN_CTRL, JsonCmd.JOINTS_RADIAN_CTRL,
+                             JsonCmd.JOINT_ANGLE_CTRL, JsonCmd.JOINTS_ANGLE_CTRL,
+                             JsonCmd.POSE_CTRL):
+                    command = switch_dict[genre](self.type, command, command_data, self.gripper_type)
+                else:
+                    command = switch_dict[genre](self.type, command, command_data)
                 
         elif not command_data:
             command = command     
@@ -317,7 +334,8 @@ class DataProcessor(object):
     def _process_received(self, data, genre): 
         if not data:
             return None
-        print(data)  
+        if self.debug:
+            print(data)
         switch_dict = {
             "roarm_m2": handle_m2_feedback,
             "roarm_m3": handle_m3_feedback
@@ -329,7 +347,7 @@ class DataProcessor(object):
             valid_data.append(data['y'])
             valid_data.append(data['z'])             
             if self.type in switch_dict:
-                valid_data = switch_dict[self.type](valid_data,data)                                   
+                valid_data = switch_dict[self.type](valid_data, data, self.gripper_type)
         else: 
             valid_data = data  
         res.append(valid_data)            

@@ -22,7 +22,7 @@ if sys.version_info >= (3, 10):
 try:
     long_description = (
         open("README.md", encoding="utf-8").read()
-        + open("docs/README.md", encoding="utf-8").read()
+        + open("doc/README.md", encoding="utf-8").read()
     )
 except (FileNotFoundError, IOError):
     long_description = textwrap.dedent(
