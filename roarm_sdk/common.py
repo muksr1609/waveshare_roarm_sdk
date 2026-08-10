@@ -87,7 +87,10 @@ class BaseController:
         
     def feedback_data(self):
         try:
-            line = self.rl.readline().decode('utf-8')
+            line = self.rl.readline()
+            if not line:
+                return None
+            line = line.decode('utf-8')
             self.data_buffer = json.loads(line)
             self.base_data = self.data_buffer
             self.rl.clear_buffer()   

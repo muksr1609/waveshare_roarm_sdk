@@ -41,7 +41,7 @@ class CommandGenerator(DataProcessor):
             0 : disable echo
             1  : enable echo
         """
-        self.calibration_parameters(roarm_type=self.type, cmd=cmd)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, cmd=cmd)
         return self._mesg(JsonCmd.ECHO_SET, cmd)
     
     def middle_set(self):
@@ -53,12 +53,16 @@ class CommandGenerator(DataProcessor):
         """Move roarm to home position
         """
         switch_dict = {
-        "roarm_m2": [0, 0, 1.5708, 0],
-        "roarm_m3": [0, 0, 1.5708, 0, 0, 0],
+            "roarm_m2": [0, 0, 1.5708, 0],
+            "roarm_m3": [0, 0, 1.5708, 0, 0, 0],
         }
-        radians = switch_dict[self.type]
-        self.joints_radian_ctrl(radians=radians,speed=100,acc=0)
-        return 1  
+        radians = list(switch_dict[self.type])
+        # angular_direct inverts gripper in joints_radian_ctrl (0 -> π on wire).
+        # angular_gear does not, so use the wire value directly for the same pose.
+        if self.gripper_type == "angular_gear":
+            radians[-1] = math.pi - radians[-1]
+        self.joints_radian_ctrl(radians=radians, speed=100, acc=0)
+        return 1
 
     def led_ctrl(self, led):
         """Ctrl led brightness
@@ -67,7 +71,7 @@ class CommandGenerator(DataProcessor):
             0: darkest
             255: brightest
         """
-        self.calibration_parameters(roarm_type=self.type, led=led)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, led=led)
         return self._mesg(JsonCmd.LED_CTRL, led)
                  
     def torque_set(self, cmd):
@@ -77,7 +81,7 @@ class CommandGenerator(DataProcessor):
             0 : disable torque
             1  : enable torque
         """
-        self.calibration_parameters(roarm_type=self.type, cmd=cmd)        
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, cmd=cmd)        
         return self._mesg(JsonCmd.TORQUE_SET, cmd)
         
     def dynamic_adaptation_set(self, mode, torques):
@@ -88,7 +92,7 @@ class CommandGenerator(DataProcessor):
             1: enable
             torque : [1,1000], type : list[int]
         """
-        self.calibration_parameters(roarm_type=self.type, mode=mode, torques=torques)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, mode=mode, torques=torques)
         return self._mesg(JsonCmd.DYNAMIC_ADAPTATION_SET, mode, torques)
         
     def feedback_get(self):
@@ -106,7 +110,7 @@ class CommandGenerator(DataProcessor):
             speed : [1,4096], type : int
             acc : [1,254], type : int
         """
-        self.calibration_parameters(roarm_type=self.type, joint=joint, radian=radian, speed=speed, acc=acc)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, joint=joint, radian=radian, speed=speed, acc=acc)
         return self._mesg(JsonCmd.JOINT_RADIAN_CTRL, joint, radian, speed, acc)
 
     def joints_radian_ctrl(self, radians, speed, acc):
@@ -116,7 +120,7 @@ class CommandGenerator(DataProcessor):
             speed : [1,4096], type : int
             acc : [1,254], type : int
         """
-        self.calibration_parameters(roarm_type=self.type, radians=radians, speed=speed, acc=acc)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, radians=radians, speed=speed, acc=acc)
         return self._mesg(JsonCmd.JOINTS_RADIAN_CTRL, radians, speed, acc)
         
     def joints_radian_get(self):
@@ -125,6 +129,8 @@ class CommandGenerator(DataProcessor):
             list: a list of all radians, type : List[float]
         """
         value = self.feedback_get()
+        if not isinstance(value, list):
+            return value
         switch_dict = {
             "roarm_m2": value[3:7],
             "roarm_m3": value[4:10],
@@ -140,7 +146,7 @@ class CommandGenerator(DataProcessor):
             speed : [1,4096], type : int
             acc : [1,254], type : int
         """
-        self.calibration_parameters(roarm_type=self.type, joint=joint, angle=angle, speed=speed, acc=acc)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, joint=joint, angle=angle, speed=speed, acc=acc)
         return self._mesg(JsonCmd.JOINT_ANGLE_CTRL, joint, angle, speed, acc)
 
     def joints_angle_ctrl(self, angles, speed, acc):
@@ -150,7 +156,7 @@ class CommandGenerator(DataProcessor):
             speed : [1,4096], type : int
             acc : [1,254], type : int
         """
-        self.calibration_parameters(roarm_type=self.type, angles=angles, speed=speed, acc=acc)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, angles=angles, speed=speed, acc=acc)
         return self._mesg(JsonCmd.JOINTS_ANGLE_CTRL, angles, speed, acc)
 
     def joints_angle_get(self):
@@ -159,6 +165,8 @@ class CommandGenerator(DataProcessor):
             list: a list of all angles, type : List[float]
         """
         value = self.feedback_get()
+        if not isinstance(value, list):
+            return value
         switch_dict = {
             "roarm_m2": value[3:7],
             "roarm_m3": value[4:10],
@@ -174,7 +182,7 @@ class CommandGenerator(DataProcessor):
             0 : gripper
             1 : wrist
         """
-        self.calibration_parameters(roarm_type=self.type, mode=mode)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, mode=mode)
         return self._mesg(JsonCmd.GRIPPER_MODE_SET, mode) 
         
     def gripper_radian_ctrl(self, radian, speed, acc):
@@ -218,6 +226,8 @@ class CommandGenerator(DataProcessor):
         }
         gripper = switch_dict[self.type]        
         value = self.feedback_get()
+        if not isinstance(value, list):
+            return value
         radian = value[gripper]
         return radian
 
@@ -232,6 +242,8 @@ class CommandGenerator(DataProcessor):
         }
         gripper = switch_dict[self.type]                 
         value =  self.feedback_get()
+        if not isinstance(value, list):
+            return value
         angle = (value[gripper]*180)/math.pi
         return angle
         
@@ -240,7 +252,7 @@ class CommandGenerator(DataProcessor):
         Args:
             pose: a list of coords value, type : List[float]
         """
-        self.calibration_parameters(roarm_type=self.type, pose=pose)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, pose=pose)
         return self._mesg(JsonCmd.POSE_CTRL, pose)
         
     def pose_get(self):
@@ -249,7 +261,9 @@ class CommandGenerator(DataProcessor):
             list : a list of coords value, type : List[float] 
         """  
         poses = []               
-        value =  self.feedback_get() 
+        value =  self.feedback_get()
+        if not isinstance(value, list):
+            return value
         value.extend([0] * (20 - len(value)))       
         switch_dict = {
             "roarm_m2": value[0:3] + [value[6]],
@@ -268,7 +282,7 @@ class CommandGenerator(DataProcessor):
             2 : STA model
             3 : AP + STA model
         """
-        self.calibration_parameters(roarm_type=self.type, wifi_cmd=wifi_cmd)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, wifi_cmd=wifi_cmd)
         return self._mesg(JsonCmd.WIFI_ON_BOOT, wifi_cmd) 
 
     def ap_set(self, ssid, password):
@@ -277,7 +291,7 @@ class CommandGenerator(DataProcessor):
             ssid : wifi ssid, type : str
             password : wifi password, type : str
         """
-        self.calibration_parameters(roarm_type=self.type, ssid=ssid, password=password)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, ssid=ssid, password=password)
         return self._mesg(JsonCmd.AP_SET, ssid, password)
 
     def sta_set(self, ssid, password):
@@ -286,7 +300,7 @@ class CommandGenerator(DataProcessor):
             ssid : new wifi ssid, type : str
             password : wifi password, type : str
         """
-        self.calibration_parameters(roarm_type=self.type, ssid=ssid, password=password)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, ssid=ssid, password=password)
         return self._mesg(JsonCmd.STA_SET, ssid, password)
 
     def apsta_set(self, ap_ssid, ap_password, sta_ssid, sta_password):
@@ -297,8 +311,8 @@ class CommandGenerator(DataProcessor):
             sta_ssid : wifi ssid, type : str
             sta_password : wifi password, type : str          
         """
-        self.calibration_parameters(roarm_type=self.type, ssid=ap_ssid, password=ap_password)
-        self.calibration_parameters(roarm_type=self.type, ssid=sta_ssid, password=sta_password)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, ssid=ap_ssid, password=ap_password)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, ssid=sta_ssid, password=sta_password)
         return self._mesg(JsonCmd.APSTA_SET, ap_ssid, ap_password, sta_ssid, sta_password)                   
 
     def wifi_config_creat_by_status(self):
@@ -314,8 +328,8 @@ class CommandGenerator(DataProcessor):
             sta_ssid : wifi ssid, type : str
             sta_password : wifi password, type : str         
         """
-        self.calibration_parameters(roarm_type=self.type, ssid=ap_ssid, password=ap_password)
-        self.calibration_parameters(roarm_type=self.type, ssid=sta_ssid, password=sta_password)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, ssid=ap_ssid, password=ap_password)
+        self.calibration_parameters(roarm_type=self.type, gripper_type=self.gripper_type, ssid=sta_ssid, password=sta_password)
         return self._mesg(JsonCmd.WIFI_CONFIG_CREATE_BY_INPUT, ap_ssid, ap_password, sta_ssid, sta_password)        
                         
     def wifi_stop(self):

@@ -3,9 +3,12 @@ from roarm_sdk.roarm import roarm
 # Serial communication example
 roarm = roarm(roarm_type="roarm_m2", port="/dev/ttyUSB0", baudrate=115200)
 
-# Http communication example
-# Note: HTTP communication needs to be connected to the same wifi first, and host is the IP address of the robotic arm.
-#roarm = roarm(roarm_type="roarm_m2", host="192.168.4.1")
+# RoArm-M2-GA serial (use this for feedback / drag teach)
+# roarm = roarm(roarm_type="roarm_m2", port="/dev/ttyUSB0", baudrate=115200, gripper_type="angular_gear")
+# roarm = roarm(roarm_type="roarm_m2", port="/dev/ttyUSB0", baudrate=115200, gripper_type="angular_gear")
+
+# HTTP is control-only (send cmds). Feedback / drag teach need serial.
+# roarm = roarm(roarm_type="roarm_m2", host="192.168.4.1", gripper_type="angular_gear")
 
 def main():
     cmd = 0

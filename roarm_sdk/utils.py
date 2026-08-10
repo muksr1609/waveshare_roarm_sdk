@@ -70,6 +70,7 @@ def check_joint_speed_acc(param_type, value, valid_range, value_type):
             f"{param_type} value not right, should be between {min_value} ~ {max_value}, "
             f"but received {value}."
         )
+        
 def calibration_parameters(**kwargs):
     robot_limit = {
         "roarm_m2": {
@@ -96,6 +97,15 @@ def calibration_parameters(**kwargs):
         },          
     }
 
+    # angular_gear: no invert, so allow both user-space (e.g. 0) and wire-space
+    # init values (e.g. π) on the gripper joint.
+    if kwargs.get("gripper_type", "angular_direct") == "angular_gear":
+        for _, limit in robot_limit.items():
+            gripper_idx = len(limit["joint"]) - 1
+            limit["radians_max"][gripper_idx] = 3.3
+            limit["angles_max"][gripper_idx] = 190
+            limit["positions_max"][gripper_idx] = 180
+
     parameter_validations = {
         "cmd": lambda value, value_type, roarm_type, kwargs: check_cmd_or_mode("cmd", value, [0, 1], value_type),
         "mode": lambda value, value_type, roarm_type, kwargs: check_cmd_or_mode("mode", value, [0, 1], value_type), 
@@ -119,7 +129,7 @@ def calibration_parameters(**kwargs):
         raise RoarmDataException(f"Unknown roarm_type: {roarm_type}")
 
     for parameter, value in kwargs.items():
-        if parameter == "roarm_type":
+        if parameter in ("roarm_type", "gripper_type"):
             continue
         
         if parameter in parameter_validations:

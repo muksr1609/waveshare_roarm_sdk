@@ -15,6 +15,7 @@ We support Python2, Python3.5 or later.
 
 - [roarm_sdk](#roarm_sdk)
     - [roarm](#roarm)
+        - [Constructor](#constructor)
         - [echo_set(cmd)](#echo_setcmd)
         - [middle_set()](#middle_set)
         - [move_init()](#move_init)
@@ -52,6 +53,30 @@ We support Python2, Python3.5 or later.
 </details>
 
 # roarm
+
+### Constructor
+
+Create a `roarm` instance.
+
+```python
+roarm = roarm(
+    roarm_type="roarm_m2",   # or "roarm_m3"
+    port="/dev/ttyUSB0",
+    baudrate=115200,
+    # host="192.168.4.1",    # use host for HTTP instead of serial
+    gripper_type="angular_direct",  # or "angular_gear"
+    debug=False,
+)
+```
+
+* **Parameters**
+
+  * **roarm_type** – `"roarm_m2"` or `"roarm_m3"`
+  * **port** / **baudrate** – serial port settings; or use **host** for HTTP (control send only; feedback / drag teach need serial)
+  * **gripper_type** – `"angular_direct"` (default) or `"angular_gear"` (mainly for RoArm-M2-GA; RoArm-M3 has one gripper and usually omits this)
+    * `"angular_direct"`: invert gripper angle/radian (legacy behavior; RoArm-M2-S / M2-Pro)
+    * `"angular_gear"`: pass through without invert (RoArm-M2-GA); joint radians can still use `0` closed / `1.57` open
+  * **debug** – `False` (default, no print) or `True` (print TX/RX data)
 
 ### echo_set(cmd)
 

@@ -17,8 +17,8 @@ def main():
     speed = 1000
     acc = 50
 
-    radians= [0, 0, 3.1415926, -1.5708, 0, 0]
-    angles= [0, 0, 180, -90, 0, 0]
+    radians= [0, 0, 2.7, -1.5708, 0, 0]
+    angles= [0, 0, 150, -90, 0, 0]
     filename = "drag_teach.json"
     pose = [235, 0, 234, 0, 0, 0]
     ssid = "waveshare"
