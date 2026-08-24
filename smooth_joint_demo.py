@@ -96,17 +96,19 @@ def speed_rad_per_second(speed):
     return float(speed) * math.pi / 2048.0
 
 
-def command_timeout_s(delta, speed):
+def command_timeout_s(delta, speed, min_s=MIN_TIMEOUT_S, buffer_s=TIMEOUT_BUFFER_S):
     """Conservative arrival timeout for a commanded delta at the given speed.
 
     Longest commanded delta divided by the linear speed, plus a buffer,
-    with a floor of MIN_TIMEOUT_S seconds.
+    with a floor of min_s seconds. The keyword defaults keep the
+    historical 3 second floor and 1 second buffer; callers (e.g.
+    large_motion_demo) may pass their own floor/buffer.
     """
     max_delta = max((abs(float(d)) for d in delta), default=0.0)
     rad_per_s = speed_rad_per_second(speed)
     if rad_per_s <= 0.0:
-        return MIN_TIMEOUT_S
-    return max(MIN_TIMEOUT_S, max_delta / rad_per_s + TIMEOUT_BUFFER_S)
+        return min_s
+    return max(min_s, max_delta / rad_per_s + buffer_s)
 
 
 def max_joint_error(current, target):

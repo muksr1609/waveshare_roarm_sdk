@@ -80,6 +80,33 @@ python smooth_joint_demo.py --port COM5 --speed 300 --cycles 1
 
 Tests run without hardware: `python -m unittest discover -s tests -v`
 
+## Large-motion demo (RoArm M3-S)
+
+`large_motion_demo.py` runs mesh-checked and physically validated large poses
+in absolute degree space. The route is A -> B -> C -> D -> B -> A -> H ->
+A -> G -> F, where A/F are home, B is high-right, C/D are high-left-open
+with roll +180/-180 and the gripper open at 90 degrees, H exercises elbow
+135 degrees, and G exercises positive wrist pitch. Home separates H and G.
+It reads the joints first and aborts before any motion unless six finite
+values are returned, the first five joints are within 0.25 rad of home
+`[0, 0, pi/2, 0, 0]` and the gripper is within 0.25 rad of closed. Every
+move is a single all-joints command (`joints_radian_ctrl`); arrival
+requires max error <= 0.12 rad with 3 consecutive stable samples
+(<= 0.015 rad step). Live firmware XYZ enforces a 120 mm tool-height guard;
+an emergency hold never releases torque. Timeouts include measured hardware
+margin for the 180/360-degree sweeps. Ctrl+C leaves torque enabled.
+
+```bash
+# stage-only: A -> B -> F, test the riskiest pitch/base excursion and return home
+python large_motion_demo.py --stage-only
+
+# full validated run (includes +/-90 base, +/-45 pitch, 360 roll, open gripper)
+python large_motion_demo.py
+
+# defaults: COM21, 115200 baud, speed 180, acc 10
+python large_motion_demo.py --port COM5 --speed 120
+```
+
 You can find out which interfaces roarm_sdk provides in [`./doc/README.md`](./doc/README.md).
 
 ![jaywcjlove/sb](https://jaywcjlove.github.io/sb/lang/chinese.svg)   ![jaywcjlove/sb](https://jaywcjlove.github.io/sb/lang/english.svg)
