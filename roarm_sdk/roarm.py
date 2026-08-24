@@ -179,6 +179,35 @@ class roarm(CommandGenerator):
             return None
         elif isinstance(res, list) and len(res) == 1:
             return res[0]
+
+    def joints_radian_ctrl_once(self, radians, speed, acc):
+        """Send one validated T=102 group command without automatic retry.
+
+        This effectful variant uses the same validation and encoding as
+        ``joints_radian_ctrl``, including the configured gripper convention, but
+        invokes ``_request_once`` exactly once. Feedback/read methods retain their
+        existing retry behavior.
+
+        Returns the encoded command bytes on a successful write, or ``-1`` when
+        the single request fails.
+        """
+        genre = JsonCmd.JOINTS_RADIAN_CTRL
+        self.calibration_parameters(
+            roarm_type=self.type,
+            gripper_type=self.gripper_type,
+            radians=radians,
+            speed=speed,
+            acc=acc,
+        )
+        real_command = super(roarm, self)._mesg(genre, radians, speed, acc)
+        if self.thread_lock:
+            with self.lock:
+                result = self._request_once(real_command, genre)
+        else:
+            result = self._request_once(real_command, genre)
+        if result is None or result == b'':
+            return -1
+        return result
             
     def breath_led(self, duration=1.0, steps=10):
         """Set breath_led

@@ -70,6 +70,11 @@ are returned and the first five joints are within 0.25 rad of home `[0, 0, pi/2,
 the measured gripper value is preserved unchanged. Every move is a single
 all-joints command (`joints_radian_ctrl`); arrival is confirmed by polling
 `joints_radian_get` (max error <= 0.08 rad) against a conservative timeout.
+
+For authority layers that must not duplicate an actuator goal,
+`joints_radian_ctrl_once(radians, speed, acc)` validates and encodes the same
+`T=102` command but performs exactly one effectful request. The existing feedback
+and general command APIs retain their compatibility retry behavior.
 Ctrl+C stops the loop without releasing torque.
 
 ```bash
