@@ -62,6 +62,24 @@ Constructor notes:
 
 The [`demo`](./demo) directory stores some test case files.
 
+## Smooth-motion demo (RoArm M3-S)
+
+`smooth_joint_demo.py` runs a small, hardware-safe A -> B -> C -> A motion loop.
+It reads the joints first and aborts before any motion unless six finite values
+are returned and the first five joints are within 0.25 rad of home `[0, 0, pi/2, 0, 0]`;
+the measured gripper value is preserved unchanged. Every move is a single
+all-joints command (`joints_radian_ctrl`); arrival is confirmed by polling
+`joints_radian_get` (max error <= 0.08 rad) against a conservative timeout.
+Ctrl+C stops the loop without releasing torque.
+
+```bash
+# defaults: COM21, 115200 baud, speed 180, acc 10, 2 cycles
+python smooth_joint_demo.py
+python smooth_joint_demo.py --port COM5 --speed 300 --cycles 1
+```
+
+Tests run without hardware: `python -m unittest discover -s tests -v`
+
 You can find out which interfaces roarm_sdk provides in [`./doc/README.md`](./doc/README.md).
 
 ![jaywcjlove/sb](https://jaywcjlove.github.io/sb/lang/chinese.svg)   ![jaywcjlove/sb](https://jaywcjlove.github.io/sb/lang/english.svg)
