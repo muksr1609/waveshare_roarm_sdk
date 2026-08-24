@@ -93,8 +93,15 @@ values are returned, the first five joints are within 0.25 rad of home
 move is a single all-joints command (`joints_radian_ctrl`); arrival
 requires max error <= 0.12 rad with 3 consecutive stable samples
 (<= 0.015 rad step). Live firmware XYZ enforces a 120 mm tool-height guard;
-an emergency hold never releases torque. Timeouts include measured hardware
-margin for the 180/360-degree sweeps. Ctrl+C leaves torque enabled.
+an emergency hold never releases torque. Ordinary timeouts also hold the
+measured joints before disconnecting. Timeouts include the worst measured
+post-roll slowdown, and a one-second inter-pose dwell lets the stock controller
+finish each sustained move before accepting the next. The validated full route
+also pauses 30 seconds after the full roll and 10 seconds at the following home
+pose because sustained testing caused a temporary controller/servo slowdown.
+The firmware also intermittently ignored a post-roll command, so the script
+probes for motion after two seconds and retries the identical target once only
+when no joint moved. Ctrl+C leaves torque enabled.
 
 ```bash
 # stage-only: A -> B -> F, test the riskiest pitch/base excursion and return home

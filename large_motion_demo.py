@@ -32,8 +32,9 @@ Safety model:
   and the readings are stable for 3 consecutive samples (max
   sample-to-sample change <= 0.015 rad). The gripper and roll are
   treated like all other joints. The timeout includes the measured
-  hardware speed margin: 1.5 times nominal travel plus 5 seconds, with
-  an 8 second floor.
+  hardware speed margin: 3 times nominal travel plus 10 seconds, with
+  a 12 second floor. This covers the slowdown observed after the long
+  roll sweep.
 - During every move, firmware XYZ feedback must keep the tool at least
   120 mm high. A violation sends one emergency hold at the measured
   joints and aborts; torque is never disabled.
@@ -78,11 +79,17 @@ GRIPPER_TOLERANCE_RAD = 0.25
 ARRIVAL_TOLERANCE_RAD = 0.12
 STABILITY_TOLERANCE_RAD = 0.015
 STABLE_SAMPLES = 3
-MIN_TIMEOUT_S = 8.0
-TIMEOUT_SCALE = 1.5
-TIMEOUT_BUFFER_S = 5.0
+MIN_TIMEOUT_S = 12.0
+TIMEOUT_SCALE = 3.0
+TIMEOUT_BUFFER_S = 10.0
 POLL_INTERVAL_S = 0.1
 MIN_TOOL_Z_MM = 120.0
+INTER_POSE_DWELL_S = 1.0
+MOTION_START_PROBE_S = 2.0
+MOTION_START_TOLERANCE_RAD = 0.02
+# Sustained roll/base trials caused severe temporary slowdown. A 30 second
+# hold restored normal timing; pause again at home before the H/G excursions.
+COOLDOWN_AFTER_INDEX_S = {3: 30.0, 5: 10.0}
 
 DEFAULT_PORT = sjd.DEFAULT_PORT
 DEFAULT_BAUDRATE = sjd.DEFAULT_BAUDRATE
@@ -94,8 +101,8 @@ def command_timeout_s(delta, speed):
     """Arrival timeout for a commanded delta at the given speed.
 
     The SDK speed conversion under-predicted the physical 180/360 degree
-    trials, so use 1.5 times nominal travel plus a 5 second buffer, with
-    an 8 second floor.
+    trials, especially after a long roll sweep, so use 3 times nominal
+    travel plus a 10 second buffer, with a 12 second floor.
     """
     max_delta = max((abs(float(value)) for value in delta), default=0.0)
     rad_per_s = sjd.speed_rad_per_second(speed)
@@ -118,6 +125,22 @@ class HeightGuardError(RuntimeError):
         )
         self.tool_z_mm = tool_z_mm
         self.joints = list(joints)
+
+
+def read_live_state(arm):
+    """Return (six joints, optional tool z) from one firmware read."""
+    if hasattr(arm, "feedback_get"):
+        feedback = arm.feedback_get()
+        if (isinstance(feedback, (list, tuple)) and len(feedback) >= 10
+                and sjd.valid_six_floats(feedback[4:10])
+                and isinstance(feedback[2], (int, float))
+                and math.isfinite(float(feedback[2]))):
+            return [float(value) for value in feedback[4:10]], float(feedback[2])
+        return None, None
+    values = arm.joints_radian_get()
+    if sjd.valid_six_floats(values):
+        return [float(value) for value in values], None
+    return None, None
 
 
 def check_startup_position(radians):
@@ -166,22 +189,11 @@ def wait_for_arrival(arm, target, timeout_s,
     stable_count = 0
     deadline = clock() + timeout_s
     while True:
-        if hasattr(arm, "feedback_get"):
-            feedback = arm.feedback_get()
-            if (isinstance(feedback, (list, tuple)) and len(feedback) >= 10
-                    and sjd.valid_six_floats(feedback[4:10])
-                    and isinstance(feedback[2], (int, float))
-                    and math.isfinite(float(feedback[2]))):
-                values = feedback[4:10]
-                tool_z_mm = float(feedback[2])
-                if tool_z_mm < MIN_TOOL_Z_MM:
-                    raise HeightGuardError(tool_z_mm, values)
-            else:
-                values = None
-        else:
-            values = arm.joints_radian_get()
-        if sjd.valid_six_floats(values):
-            samples = [float(v) for v in values]
+        values, tool_z_mm = read_live_state(arm)
+        if tool_z_mm is not None and tool_z_mm < MIN_TOOL_Z_MM:
+            raise HeightGuardError(tool_z_mm, values)
+        if values is not None:
+            samples = values
             telemetry.append((clock(), samples))
             if previous is None:
                 stable_count = 1
@@ -224,6 +236,15 @@ class LargeMotionRunner:
         self.results = []
 
     def _transition(self, name, target, previous):
+        start_values, start_z_mm = read_live_state(self.arm)
+        if start_values is None:
+            start_values = [float(value) for value in previous]
+        if start_z_mm is not None and start_z_mm < MIN_TOOL_Z_MM:
+            raise RuntimeError(
+                "height guard before pose {}: tool height {:.1f} mm".format(
+                    name, start_z_mm
+                )
+            )
         delta = [float(t) - float(p) for t, p in zip(target, previous)]
         timeout_s = command_timeout_s(delta, self.speed)
         self.print_fn(
@@ -237,6 +258,27 @@ class LargeMotionRunner:
         self.arm.joints_radian_ctrl(
             radians=list(target), speed=self.speed, acc=self.acc
         )
+        if sjd.max_joint_error(start_values, target) > ARRIVAL_TOLERANCE_RAD:
+            self.sleep(MOTION_START_PROBE_S)
+            probe_values, probe_z_mm = read_live_state(self.arm)
+            if probe_z_mm is not None and probe_z_mm < MIN_TOOL_Z_MM:
+                self.arm.joints_radian_ctrl(
+                    radians=probe_values, speed=self.speed, acc=self.acc
+                )
+                raise RuntimeError(
+                    "height guard: tool height {:.1f} mm".format(probe_z_mm)
+                )
+            if (probe_values is not None
+                    and sjd.max_joint_error(probe_values, start_values)
+                    <= MOTION_START_TOLERANCE_RAD):
+                self.print_fn(
+                    "pose {}: no motion after {:.0f}s; retrying target once".format(
+                        name, MOTION_START_PROBE_S
+                    )
+                )
+                self.arm.joints_radian_ctrl(
+                    radians=list(target), speed=self.speed, acc=self.acc
+                )
         try:
             arrived, telemetry = wait_for_arrival(
                 self.arm, target, timeout_s, sleep=self.sleep, clock=self.clock
@@ -268,6 +310,12 @@ class LargeMotionRunner:
             )
         )
         if not arrived:
+            if achieved is not None:
+                # Ordinary timeout also holds measured joints. Do not leave
+                # a target running after the serial connection is closed.
+                self.arm.joints_radian_ctrl(
+                    radians=list(achieved), speed=self.speed, acc=self.acc
+                )
             raise TimeoutError(
                 "pose {} not settled within {:.2f}s".format(name, timeout_s)
             )
@@ -291,10 +339,23 @@ class LargeMotionRunner:
         )
         sequence = STAGE_SEQUENCE if self.stage_only else NORMAL_SEQUENCE
         previous = [float(v) for v in reading]
-        for name in sequence:
+        for index, name in enumerate(sequence):
             target = POSES[name]
             self._transition(name, target, previous)
             previous = target
+            if index + 1 < len(sequence):
+                # The stock controller can ignore a packet sent immediately
+                # after a sustained move. A short dwell prevented that on the
+                # physical arm without changing any trajectory.
+                dwell_s = max(
+                    INTER_POSE_DWELL_S,
+                    COOLDOWN_AFTER_INDEX_S.get(index, 0.0),
+                )
+                if dwell_s > INTER_POSE_DWELL_S:
+                    self.print_fn(
+                        "controller recovery dwell: {:.0f}s".format(dwell_s)
+                    )
+                self.sleep(dwell_s)
         return self.transitions_completed
 
 

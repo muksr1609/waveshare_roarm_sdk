@@ -76,8 +76,32 @@ class FakeArm(object):
 class LowFeedbackArm(FakeArm):
     """Fake arm whose firmware XYZ reports an unsafe live tool height."""
 
+    def __init__(self):
+        super().__init__()
+        self.feedback_calls = 0
+
     def feedback_get(self):
-        return [0.0, 0.0, 100.0, 0.0] + list(self._current)
+        self.feedback_calls += 1
+        z_mm = 200.0 if self.feedback_calls == 1 else 100.0
+        return [0.0, 0.0, z_mm, 0.0] + list(self._current)
+
+
+class DroppedBCommandArm(FakeArm):
+    """Ignores the first B target exactly like the observed firmware drop."""
+
+    def __init__(self):
+        super().__init__()
+        self.dropped = False
+
+    def joints_radian_ctrl(self, radians, speed, acc):
+        self.joints_radian_ctrl_calls.append(
+            {"radians": list(radians), "speed": speed, "acc": acc}
+        )
+        if list(radians) == lmd.POSES["B"] and not self.dropped:
+            self.dropped = True
+            return 1
+        self._current = list(radians)
+        return 1
 
 
 def make_runner(arm, **kwargs):
@@ -152,6 +176,18 @@ class PosesTest(unittest.TestCase):
 
 
 class SequenceTest(unittest.TestCase):
+    def test_retries_identical_target_once_when_firmware_drops_command(self):
+        arm = DroppedBCommandArm()
+        runner, _ = make_runner(arm, stage_only=True)
+        self.assertEqual(runner.run(), 3)
+        b_calls = [
+            call for call in arm.joints_radian_ctrl_calls
+            if call["radians"] == lmd.POSES["B"]
+        ]
+        self.assertEqual(len(b_calls), 2)
+        self.assertEqual(arm.joint_radian_ctrl_calls, [])
+        self.assertEqual(arm.torque_set_calls, [])
+
     def test_full_sequence_issues_exact_poses_in_order(self):
         arm = FakeArm()
         runner, _ = make_runner(arm)
@@ -349,9 +385,13 @@ class ArrivalTest(unittest.TestCase):
         expected = lmd.TIMEOUT_SCALE * (math.pi / 2.0) / sjd.speed_rad_per_second(
             lmd.DEFAULT_SPEED) + lmd.TIMEOUT_BUFFER_S
         self.assertAlmostEqual(large, expected)
-        self.assertEqual(lmd.MIN_TIMEOUT_S, 8.0)
-        self.assertEqual(lmd.TIMEOUT_SCALE, 1.5)
-        self.assertEqual(lmd.TIMEOUT_BUFFER_S, 5.0)
+        self.assertEqual(lmd.MIN_TIMEOUT_S, 12.0)
+        self.assertEqual(lmd.TIMEOUT_SCALE, 3.0)
+        self.assertEqual(lmd.TIMEOUT_BUFFER_S, 10.0)
+        self.assertEqual(lmd.INTER_POSE_DWELL_S, 1.0)
+        self.assertEqual(lmd.MOTION_START_PROBE_S, 2.0)
+        self.assertEqual(lmd.MOTION_START_TOLERANCE_RAD, 0.02)
+        self.assertEqual(lmd.COOLDOWN_AFTER_INDEX_S, {3: 30.0, 5: 10.0})
 
     def test_runner_times_out_when_arm_never_moves(self):
         # The arm keeps reporting the home pose no matter what is commanded.
@@ -361,8 +401,10 @@ class ArrivalTest(unittest.TestCase):
             runner.run()
         # A equals the home pose (gripper closed), so A settles; B times out.
         self.assertEqual(runner.transitions_completed, 1)
-        self.assertEqual(len(arm.joints_radian_ctrl_calls), 2)
-        # Waited no less than the 4 second floor (in fake time).
+        # A target, B target, one no-motion retry, then a measured hold.
+        self.assertEqual(len(arm.joints_radian_ctrl_calls), 4)
+        self.assertEqual(arm.joints_radian_ctrl_calls[-1]["radians"], HOME)
+        self.assertEqual(arm.torque_set_calls, [])
         self.assertGreaterEqual(clock.now, lmd.MIN_TIMEOUT_S)
 
 
