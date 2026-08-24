@@ -114,6 +114,28 @@ python large_motion_demo.py
 python large_motion_demo.py --port COM5 --speed 120
 ```
 
+## Cartesian XYZ motion (RoArm M3-S)
+
+`cartesian_motion_demo.py` converts one XYZ target to joint radians with
+Waveshare's upstream
+[`roarm_m3::computeJointRadbyPos`](https://github.com/waveshareteam/roarm_ws/blob/40dbd84b553695212fab713e8465f817ba95454d/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/solver.hpp),
+then sends that result through the same hardware-tested, single-packet
+`joints_radian_ctrl` (`T=102`) transition used by `large_motion_demo.py`.
+XYZ is in millimetres. Roll and pitch are in degrees. When omitted, roll and
+gripper are retained from joint feedback and pitch is retained from the
+official SDK `pose_get` feedback. The arm must start near closed home, and a
+target below the existing 120 mm tool-height guard is rejected before motion.
+No `pose_ctrl`, custom IK, waypoint streaming, per-joint motion or torque
+change is used.
+
+```bash
+# XYZ only: retain current roll, pitch, and gripper
+python cartesian_motion_demo.py --x-mm 346.16 --y-mm 0 --z-mm 223.13
+
+# Existing physically validated B target, expressed as its upstream XYZ pose
+python cartesian_motion_demo.py --x-mm 0 --y-mm 464.229544 --z-mm 257.952554 --roll-deg 0 --pitch-deg -45 --gripper-deg 0
+```
+
 You can find out which interfaces roarm_sdk provides in [`./doc/README.md`](./doc/README.md).
 
 ![jaywcjlove/sb](https://jaywcjlove.github.io/sb/lang/chinese.svg)   ![jaywcjlove/sb](https://jaywcjlove.github.io/sb/lang/english.svg)
