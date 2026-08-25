@@ -1,0 +1,16 @@
+# 2026-08-25T21:09:11.911882+00:00  tag=run9  port=COM21  sdk=C:\Users\Mukund\AppData\Local\Programs\Python\Python312\Lib\site-packages\roarm_sdk  ik=C:\Users\Mukund\Documents\Ro-Arm\roarm_sdk\waveshare_ik.py  home_xyz=[359.72 1.10 180.95]  constX=359.72  envelope=3.0deg sweep_max=10.0s move_tol=0.5deg progress_tol=0.1deg progress_stable=2 resume_tol=3.36deg
+# attempt 1: M=[0.0031 0.0752 1.6230 -0.0046 -0.0031 0.0261]  i_target=2  max_disp=2.241 deg  per_joint=[0.02 0.20 2.04 2.24 0.00] deg
+t=0.000 att=1 phase=pump idx=0 cmd=[0.0031 0.0752 1.6230 -0.0046 -0.0031 0.0261] meas=[0.0031 0.0752 1.6230 -0.0046 -0.0031 0.0261] moved=0.000 dist_tgt=2.241
+t=0.000 att=1 phase=pump idx=1 cmd=[0.0030 0.0768 1.6409 -0.0242 -0.0031 0.0261] meas=[0.0031 0.0752 1.6230 -0.0046 -0.0031 0.0261] moved=0.000 dist_tgt=2.241
+t=0.047 att=1 phase=pump idx=2 cmd=[0.0028 0.0787 1.6585 -0.0437 -0.0031 0.0261] meas=[0.0031 0.0752 1.6230 -0.0046 -0.0031 0.0261] moved=0.000 dist_tgt=2.241
+# attempt 1: NO commit after pump (arm command-deaf); retrying from newly measured state
+# attempt 2: M=[0.0031 0.0752 1.6230 -0.0046 -0.0031 0.0261]  i_target=2  max_disp=2.241 deg  per_joint=[0.02 0.20 2.04 2.24 0.00] deg
+t=0.063 att=2 phase=pump idx=0 cmd=[0.0031 0.0752 1.6230 -0.0046 -0.0031 0.0261] meas=[0.0031 0.0752 1.6230 -0.0046 -0.0031 0.0261] moved=0.000 dist_tgt=2.241
+t=0.063 att=2 phase=pump idx=1 cmd=[0.0030 0.0768 1.6409 -0.0242 -0.0031 0.0261] meas=[0.0031 0.0752 1.6230 -0.0046 -0.0031 0.0261] moved=0.000 dist_tgt=2.241
+t=0.063 att=2 phase=pump idx=2 cmd=[0.0028 0.0787 1.6585 -0.0437 -0.0031 0.0261] meas=[0.0031 0.0752 1.6230 -0.0046 -0.0031 0.0261] moved=0.000 dist_tgt=2.241
+# attempt 2: NO commit after pump (arm command-deaf); retrying from newly measured state
+# attempt 3: M=[0.0031 0.1012 1.6674 -0.0276 -0.0031 0.0261]  i_target=3  max_disp=2.039 deg  per_joint=[0.04 1.17 0.49 2.04 0.00] deg
+t=0.000 att=3 phase=pump idx=0 cmd=[0.0031 0.0752 1.6230 -0.0046 -0.0031 0.0261] meas=[0.0031 0.1058 1.6674 -0.0291 -0.0031 0.0261] moved=0.264 dist_tgt=1.952
+t=0.000 att=3 phase=pump idx=1 cmd=[0.0030 0.0768 1.6409 -0.0242 -0.0031 0.0261] meas=[0.0031 0.1058 1.6674 -0.0291 -0.0031 0.0261] moved=0.264 dist_tgt=1.952
+t=0.047 att=3 phase=pump idx=2 cmd=[0.0028 0.0787 1.6585 -0.0437 -0.0031 0.0261] meas=[0.0031 0.1058 1.6674 -0.0291 -0.0031 0.0261] moved=0.264 dist_tgt=1.952
+t=0.109 att=3 phase=pump idx=3 cmd=[0.0024 0.0808 1.6759 -0.0632 -0.0031 0.0261] meas=[0.0031 0.1058 1.6674 -0.0291 -0.0031 0.0261] moved=0.264 dist_tgt=1.952

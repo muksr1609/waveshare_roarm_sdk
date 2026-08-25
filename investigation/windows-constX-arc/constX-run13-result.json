@@ -1,0 +1,1328 @@
+{
+ "timestamp_utc": "2026-08-25T21:23:23.764425+00:00",
+ "platform": "win32",
+ "tag": "run13",
+ "port": "COM21",
+ "serial_settings": {
+  "port": "COM21",
+  "baudrate": 115200,
+  "timeout": 0.1,
+  "rtscts": false,
+  "dsrdtr": false,
+  "xonxoff": false,
+  "rts": false,
+  "dtr": true,
+  "is_open": true
+ },
+ "roarm_sdk_version": "0.1.0",
+ "roarm_sdk_file": "C:\\Users\\Mukund\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\roarm_sdk\\__init__.py",
+ "pyserial_version": "3.5",
+ "ik_module": "C:\\Users\\Mukund\\Documents\\Ro-Arm\\roarm_sdk\\waveshare_ik.py",
+ "params": {
+  "speed": 1000,
+  "acc": 50,
+  "rate_hz": 20.0,
+  "radius_mm": 150.0,
+  "sweep_deg": 110.0
+ },
+ "rule_params": {
+  "envelope_rad": 0.05235987755982989,
+  "sweep_max_s": 10.0,
+  "move_tol_rad": 0.008726646259971648,
+  "progress_tol_rad": 0.0017453292519943296,
+  "progress_stable": 2,
+  "max_attempts": 3,
+  "handoff": "direct transition to compatible wp (no align hold, no T102 gap)",
+  "resume_tol_rad": 0.058605317457026906,
+  "resume_tol_formula": "max(3 deg, 3 x max_adjacent_step=1.119 deg) = 3.358 deg",
+  "watchdog_unchanged": {
+   "gross_err_rad": 0.2617993877991494,
+   "gross_err_sustain": 8,
+   "no_motion_tol_rad": 0.008726646259971648,
+   "freeze_win": 20,
+   "freeze_arm": 20,
+   "freeze_meas_tol_rad": 0.008726646259971648,
+   "freeze_cmd_tol_rad": 0.05235987755982989,
+   "freeze_sustain": 2
+  }
+ },
+ "home_pose": {
+  "xyz_mm": [
+   361.0388402,
+   -6.646670483,
+   178.1860122
+  ],
+  "pitch_rad": 0.130388367,
+  "roll_rad": -0.003067962,
+  "gripper": 0.026077673589793182,
+  "joints_rad": [
+   -0.018407769,
+   0.082834963,
+   1.622951674,
+   -0.004601942,
+   -0.003067962,
+   0.026077673589793182
+  ]
+ },
+ "selected_plan": {
+  "center_yz_mm": [
+   143.353329517,
+   178.1860122
+  ],
+  "sweep_sign": 1,
+  "feasible": true,
+  "n_waypoints": 101,
+  "path_length_mm": 287.9749038720041,
+  "max_adjacent_step_rad": 0.01953510581900897,
+  "base_min_rad": -0.018407769451738182,
+  "base_max_rad": 0.49447978173062246,
+  "peak_abs_base_rad": 0.49447978173062246,
+  "excursion_rad": {
+   "base": 0.5128875511823606,
+   "shoulder": 0.473733858068094,
+   "elbow": 0.5439025482673534,
+   "wrist": 0.929168966149303,
+   "roll": 0.0
+  },
+  "cartesian_bbox_mm": {
+   "x": [
+    361.0388402,
+    361.0388402
+   ],
+   "y": [
+    -6.646670483000008,
+    194.65635101585022
+   ],
+   "z": [
+    28.186926051331426,
+    178.18601220000002
+   ]
+  }
+ },
+ "handshake": {
+  "committed": true,
+  "attempts": 1,
+  "commit_phase": "pump",
+  "first_motion_t_s": 1.656,
+  "commit_state": [
+   -0.0184,
+   0.1074,
+   1.6598,
+   -0.0261,
+   -0.0031,
+   0.0261
+  ],
+  "resume_index": 2,
+  "resume_err_deg": 1.194,
+  "startup_target_index": 2,
+  "startup_max_disp_deg": 2.237,
+  "startup_per_joint_deg": [
+   0.018,
+   0.213,
+   2.025,
+   2.237,
+   0.0
+  ],
+  "per_attempt": [
+   {
+    "attempt": 1,
+    "start_state": [
+     -0.0184,
+     0.0828,
+     1.623,
+     -0.0046,
+     -0.0031,
+     0.0261
+    ],
+    "startup_target_index": 2,
+    "startup_max_disp_deg": 2.237,
+    "startup_per_joint_deg": [
+     0.018,
+     0.213,
+     2.025,
+     2.237,
+     0.0
+    ],
+    "committed": true,
+    "commit_phase": "pump",
+    "first_motion_t_s": 1.656,
+    "commit_state": [
+     -0.0184,
+     0.1074,
+     1.6598,
+     -0.0261,
+     -0.0031,
+     0.0261
+    ],
+    "t102_continuous": true,
+    "samples": [
+     {
+      "t": 0.0,
+      "phase": "pump",
+      "idx": 0,
+      "cmd": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.0,
+      "phase": "pump",
+      "idx": 1,
+      "cmd": [
+       -0.0184,
+       0.0829,
+       1.624,
+       -0.0057,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.109,
+      "phase": "pump",
+      "idx": 2,
+      "cmd": [
+       -0.0184,
+       0.083,
+       1.625,
+       -0.0068,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.109,
+      "phase": "pump",
+      "idx": 3,
+      "cmd": [
+       -0.0184,
+       0.0831,
+       1.626,
+       -0.008,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.156,
+      "phase": "pump",
+      "idx": 4,
+      "cmd": [
+       -0.0184,
+       0.0832,
+       1.627,
+       -0.0091,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.187,
+      "phase": "pump",
+      "idx": 5,
+      "cmd": [
+       -0.0184,
+       0.0833,
+       1.628,
+       -0.0102,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.25,
+      "phase": "pump",
+      "idx": 6,
+      "cmd": [
+       -0.0184,
+       0.0834,
+       1.6291,
+       -0.0113,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.312,
+      "phase": "pump",
+      "idx": 7,
+      "cmd": [
+       -0.0184,
+       0.0835,
+       1.6301,
+       -0.0124,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.343,
+      "phase": "pump",
+      "idx": 8,
+      "cmd": [
+       -0.0184,
+       0.0836,
+       1.6311,
+       -0.0135,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.406,
+      "phase": "pump",
+      "idx": 9,
+      "cmd": [
+       -0.0184,
+       0.0837,
+       1.6321,
+       -0.0147,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.453,
+      "phase": "pump",
+      "idx": 10,
+      "cmd": [
+       -0.0184,
+       0.0838,
+       1.6331,
+       -0.0158,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.5,
+      "phase": "pump",
+      "idx": 11,
+      "cmd": [
+       -0.0184,
+       0.0839,
+       1.6341,
+       -0.0169,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.547,
+      "phase": "pump",
+      "idx": 12,
+      "cmd": [
+       -0.0184,
+       0.084,
+       1.6352,
+       -0.018,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.609,
+      "phase": "pump",
+      "idx": 13,
+      "cmd": [
+       -0.0184,
+       0.0841,
+       1.6362,
+       -0.0191,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.64,
+      "phase": "pump",
+      "idx": 14,
+      "cmd": [
+       -0.0183,
+       0.0842,
+       1.6372,
+       -0.0202,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.703,
+      "phase": "pump",
+      "idx": 15,
+      "cmd": [
+       -0.0183,
+       0.0843,
+       1.6382,
+       -0.0214,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.75,
+      "phase": "pump",
+      "idx": 16,
+      "cmd": [
+       -0.0183,
+       0.0844,
+       1.6392,
+       -0.0225,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.812,
+      "phase": "pump",
+      "idx": 17,
+      "cmd": [
+       -0.0183,
+       0.0845,
+       1.6402,
+       -0.0236,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.843,
+      "phase": "pump",
+      "idx": 18,
+      "cmd": [
+       -0.0183,
+       0.0846,
+       1.6413,
+       -0.0247,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.906,
+      "phase": "pump",
+      "idx": 19,
+      "cmd": [
+       -0.0183,
+       0.0847,
+       1.6423,
+       -0.0258,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.0828,
+       1.623,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 0.0,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 0.953,
+      "phase": "pump",
+      "idx": 20,
+      "cmd": [
+       -0.0183,
+       0.0849,
+       1.6433,
+       -0.0269,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1043,
+       1.6352,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 1.23,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 1.0,
+      "phase": "pump",
+      "idx": 21,
+      "cmd": [
+       -0.0183,
+       0.085,
+       1.6443,
+       -0.028,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1074,
+       1.6368,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 1.406,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 1.047,
+      "phase": "pump",
+      "idx": 22,
+      "cmd": [
+       -0.0183,
+       0.0851,
+       1.6453,
+       -0.0292,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1058,
+       1.6352,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 1.318,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 1.093,
+      "phase": "pump",
+      "idx": 23,
+      "cmd": [
+       -0.0183,
+       0.0852,
+       1.6463,
+       -0.0303,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1074,
+       1.6398,
+       -0.0046,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 1.406,
+      "dist_to_target_deg": 2.237,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 1.156,
+      "phase": "pump",
+      "idx": 24,
+      "cmd": [
+       -0.0182,
+       0.0853,
+       1.6473,
+       -0.0314,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1074,
+       1.6398,
+       -0.0061,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 1.406,
+      "dist_to_target_deg": 2.149,
+      "progress_deg": 0.088
+     },
+     {
+      "t": 1.203,
+      "phase": "pump",
+      "idx": 25,
+      "cmd": [
+       -0.0182,
+       0.0854,
+       1.6483,
+       -0.0325,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1074,
+       1.646,
+       -0.0061,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 1.406,
+      "dist_to_target_deg": 2.149,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 1.25,
+      "phase": "pump",
+      "idx": 26,
+      "cmd": [
+       -0.0182,
+       0.0855,
+       1.6493,
+       -0.0336,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1074,
+       1.6444,
+       -0.0077,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 1.406,
+      "dist_to_target_deg": 2.061,
+      "progress_deg": 0.088
+     },
+     {
+      "t": 1.297,
+      "phase": "pump",
+      "idx": 27,
+      "cmd": [
+       -0.0182,
+       0.0856,
+       1.6503,
+       -0.0347,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1074,
+       1.6444,
+       -0.0077,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 1.406,
+      "dist_to_target_deg": 2.061,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 1.359,
+      "phase": "pump",
+      "idx": 28,
+      "cmd": [
+       -0.0182,
+       0.0858,
+       1.6513,
+       -0.0358,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1074,
+       1.649,
+       -0.0107,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 1.494,
+      "dist_to_target_deg": 1.886,
+      "progress_deg": 0.176
+     },
+     {
+      "t": 1.406,
+      "phase": "pump",
+      "idx": 29,
+      "cmd": [
+       -0.0182,
+       0.0859,
+       1.6523,
+       -0.037,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1074,
+       1.6521,
+       -0.0123,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 1.67,
+      "dist_to_target_deg": 1.798,
+      "progress_deg": 0.088
+     },
+     {
+      "t": 1.437,
+      "phase": "pump",
+      "idx": 30,
+      "cmd": [
+       -0.0182,
+       0.086,
+       1.6533,
+       -0.0381,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1074,
+       1.6536,
+       -0.0169,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 1.758,
+      "dist_to_target_deg": 1.534,
+      "progress_deg": 0.264
+     },
+     {
+      "t": 1.5,
+      "phase": "pump",
+      "idx": 31,
+      "cmd": [
+       -0.0182,
+       0.0861,
+       1.6543,
+       -0.0392,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1074,
+       1.6536,
+       -0.0169,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 1.758,
+      "dist_to_target_deg": 1.534,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 1.562,
+      "phase": "pump",
+      "idx": 32,
+      "cmd": [
+       -0.0181,
+       0.0862,
+       1.6553,
+       -0.0403,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1074,
+       1.6552,
+       -0.0169,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 1.846,
+      "dist_to_target_deg": 1.534,
+      "progress_deg": 0.0
+     },
+     {
+      "t": 1.593,
+      "phase": "pump",
+      "idx": 33,
+      "cmd": [
+       -0.0181,
+       0.0863,
+       1.6563,
+       -0.0414,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1074,
+       1.6598,
+       -0.0199,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 2.109,
+      "dist_to_target_deg": 1.358,
+      "progress_deg": 0.176
+     },
+     {
+      "t": 1.656,
+      "phase": "pump",
+      "idx": 34,
+      "cmd": [
+       -0.0181,
+       0.0864,
+       1.6573,
+       -0.0425,
+       -0.0031,
+       0.0261
+      ],
+      "meas": [
+       -0.0184,
+       0.1074,
+       1.6598,
+       -0.0261,
+       -0.0031,
+       0.0261
+      ],
+      "moved_deg": 2.109,
+      "dist_to_target_deg": 1.194,
+      "progress_deg": 0.165
+     }
+    ]
+   }
+  ],
+  "aborted": false,
+  "abort_reason": null,
+  "t102_continuous": true,
+  "start_state_M": [
+   -0.0184,
+   0.0828,
+   1.623,
+   -0.0046,
+   -0.0031,
+   0.0261
+  ]
+ },
+ "forward": {
+  "aborted": false,
+  "abort_reason": null,
+  "align_commands": 0,
+  "advance_commands": 99,
+  "commands_sent": 99,
+  "fb_ok": 99,
+  "fb_invalid": 0,
+  "max_tracking_err_rad": 0.10158246661309686,
+  "max_tracking_local_idx": 15,
+  "max_tracking_global_wp": 17,
+  "max_tracking_dominant_joint": "wrist",
+  "first20_tracking": [
+   {
+    "idx": 0,
+    "global_wp": 2,
+    "track_deg": 1.194,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 1,
+    "global_wp": 3,
+    "track_deg": 2.122,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 2,
+    "global_wp": 4,
+    "track_deg": 3.235,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 3,
+    "global_wp": 5,
+    "track_deg": 4.346,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 4,
+    "global_wp": 6,
+    "track_deg": 5.455,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 5,
+    "global_wp": 7,
+    "track_deg": 5.155,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 6,
+    "global_wp": 8,
+    "track_deg": 5.291,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 7,
+    "global_wp": 9,
+    "track_deg": 5.073,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 8,
+    "global_wp": 10,
+    "track_deg": 5.291,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 9,
+    "global_wp": 11,
+    "track_deg": 5.593,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 10,
+    "global_wp": 12,
+    "track_deg": 5.1,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 11,
+    "global_wp": 13,
+    "track_deg": 5.307,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 12,
+    "global_wp": 14,
+    "track_deg": 4.805,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 13,
+    "global_wp": 15,
+    "track_deg": 5.178,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 14,
+    "global_wp": 16,
+    "track_deg": 5.634,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 15,
+    "global_wp": 17,
+    "track_deg": 5.82,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 16,
+    "global_wp": 18,
+    "track_deg": 5.122,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 17,
+    "global_wp": 19,
+    "track_deg": 5.56,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 18,
+    "global_wp": 20,
+    "track_deg": 4.936,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 19,
+    "global_wp": 21,
+    "track_deg": 5.096,
+    "dominant": "wrist"
+   }
+  ],
+  "achieved_cmd_rate_hz": 19.772,
+  "freeze_windows": 0,
+  "max_meas_motion_over_1s_window_rad": 0.35895,
+  "final_xyz_mm": [
+   361.3456696,
+   182.5814015,
+   17.78745417
+  ],
+  "final_joints_rad": [
+   0.46786414,
+   0.581378719,
+   1.942019677,
+   -0.762388452,
+   -0.003067962,
+   0.026077673589793182
+  ],
+  "final_joint_err_rad": [
+   0.026615641730622475,
+   0.024810296279449306,
+   0.039713650478898854,
+   0.00469869655324473,
+   0.0
+  ],
+  "final_joint_err_max_rad": 0.039713650478898854,
+  "resume_index": 2,
+  "resume_err_deg": 1.194
+ },
+ "reverse": {
+  "aborted": false,
+  "abort_reason": null,
+  "duration_s": 5.0,
+  "commands_sent": 101,
+  "fb_ok": 101,
+  "fb_invalid": 0,
+  "max_tracking_err_rad": 0.13265772893434646,
+  "max_tracking_local_idx": 16,
+  "max_tracking_global_wp": 16,
+  "max_tracking_dominant_joint": "wrist",
+  "first20_tracking": [
+   {
+    "idx": 0,
+    "track_deg": 2.275,
+    "dominant": "elbow"
+   },
+   {
+    "idx": 1,
+    "track_deg": 1.632,
+    "dominant": "elbow"
+   },
+   {
+    "idx": 2,
+    "track_deg": 1.454,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 3,
+    "track_deg": 1.57,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 4,
+    "track_deg": 2.149,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 5,
+    "track_deg": 2.71,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 6,
+    "track_deg": 3.253,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 7,
+    "track_deg": 3.778,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 8,
+    "track_deg": 4.284,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 9,
+    "track_deg": 4.771,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 10,
+    "track_deg": 5.237,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 11,
+    "track_deg": 5.684,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 12,
+    "track_deg": 6.11,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 13,
+    "track_deg": 6.515,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 14,
+    "track_deg": 6.899,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 15,
+    "track_deg": 7.261,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 16,
+    "track_deg": 7.601,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 17,
+    "track_deg": 6.599,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 18,
+    "track_deg": 5.575,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 19,
+    "track_deg": 5.474,
+    "dominant": "base"
+   }
+  ],
+  "achieved_cmd_rate_hz": 19.988,
+  "median_cmd_interval_s": 0.047,
+  "max_cmd_interval_s": 0.078,
+  "min_cmd_interval_s": 0.0,
+  "freeze_windows": 0,
+  "max_meas_motion_over_1s_window_rad": 0.35742,
+  "final_xyz_mm": [
+   371.538351,
+   2.849719343,
+   131.9293091
+  ],
+  "final_joints_rad": [
+   0.007669904,
+   0.171805848,
+   1.668971097,
+   -0.007669904,
+   -0.003067962,
+   0.026077673589793182
+  ],
+  "final_joint_err_rad": [
+   0.026077673451738184,
+   0.08897128334754326,
+   0.04601024561069034,
+   0.0030591817531300195,
+   0.0
+  ],
+  "final_joint_err_max_rad": 0.08897128334754326
+ },
+ "arc_ran": true,
+ "resume_index": 2,
+ "measured_z_range_mm": [
+  -3.863370339,
+  178.1860122
+ ],
+ "return_home": {
+  "reached": true,
+  "err_rad": 0.081300982,
+  "polls": 25
+ },
+ "verdict": "COMPLETE"
+}

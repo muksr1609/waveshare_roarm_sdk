@@ -1,0 +1,2 @@
+# 2026-08-25T21:16:51.592978+00:00  tag=run10  port=COM21  sdk=C:\Users\Mukund\AppData\Local\Programs\Python\Python312\Lib\site-packages\roarm_sdk  ik=C:\Users\Mukund\Documents\Ro-Arm\roarm_sdk\waveshare_ik.py  home_xyz=[360.00 1.10 180.40]  constX=360.00  envelope=3.0deg sweep_max=10.0s move_tol=0.5deg progress_tol=0.1deg progress_stable=2 resume_tol=3.36deg
+# attempt 1: M=[0.0031 0.0767 1.6230 -0.0046 -0.0031 0.0261]  i_target=2  max_disp=2.240 deg  per_joint=[0.02 0.20 2.04 2.24 0.00] deg
