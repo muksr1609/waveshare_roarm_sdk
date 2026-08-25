@@ -60,11 +60,17 @@ def main():
     ap.add_argument("--dry", action="store_true", help="home + plan, no arc")
     ap.add_argument("--forward-only", action="store_true", help="skip the reverse leg")
     ap.add_argument("--tag", default="constZ")
+    ap.add_argument("--speed", type=int, default=cc.SPEED,
+                    help="override the joint speed (default %d = 1x; e.g. 3000 = 3x)" % cc.SPEED)
+    ap.add_argument("--acc", type=int, default=cc.ACC,
+                    help="override the joint acceleration (default %d = 1x; e.g. 150 = 3x)" % cc.ACC)
     ap.add_argument("--out", default=None)
     ap.add_argument("--log", default=None)
     args = ap.parse_args()
     out = args.out or os.path.join(HERE, "constZ-%s-result.json" % args.tag)
     log = args.log or os.path.join(HERE, "constZ-%s.log" % args.tag)
+    cc.SPEED = args.speed
+    cc.ACC = args.acc
 
     ik_mod, ik_path = az.load_ik_module()
     ik_fn = ik_mod.compute_joint_rad_by_pos

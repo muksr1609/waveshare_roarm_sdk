@@ -1,0 +1,411 @@
+{
+ "timestamp_utc": "2026-08-25T21:32:58.562342+00:00",
+ "tag": "reg4",
+ "port": "COM21",
+ "ik": "C:\\Users\\Mukund\\Documents\\Ro-Arm\\roarm_sdk\\waveshare_ik.py",
+ "verdict": "COMPLETE",
+ "arc_ran": true,
+ "mode": "const-Z (same continuous rule as constX-continuous)",
+ "radius_mm": 150.0,
+ "sweep_deg": 110.0,
+ "selected": {
+  "center_mm": [
+   211.05753270000002,
+   -5.538987652
+  ],
+  "sweep_sign": 1,
+  "feasible": true,
+  "n_waypoints": 101,
+  "path_length_mm": 287.9749038720042,
+  "max_adjacent_step_rad": 0.01255472510187805,
+  "base_min_rad": -0.015339807882089645,
+  "base_max_rad": 0.7031245209085447,
+  "peak_abs_base_rad": 0.7031245209085447,
+  "excursion_rad": {
+   "base": 0.7184643287906344,
+   "shoulder": 0.657274391463071,
+   "elbow": 0.5294150027920788,
+   "wrist": 0.16418241898396801,
+   "roll": 0.0
+  },
+  "cartesian_bbox_mm": {
+   "x": [
+    159.7545112011497,
+    361.0575327
+   ],
+   "y": [
+    -5.538987652,
+    144.46009849666856
+   ],
+   "z": [
+    178.1860122,
+    178.1860122
+   ]
+  }
+ },
+ "rule_params": {
+  "envelope_rad": 0.05235987755982989,
+  "move_tol_rad": 0.008726646259971648,
+  "progress_tol_rad": 0.0017453292519943296,
+  "sweep_max_s": 10.0,
+  "max_attempts": 3,
+  "handoff": "direct transition to compatible wp (no align hold, no T102 gap)",
+  "resume_tol_rad": 0.05235987755982989,
+  "resume_tol_formula": "max(3 deg, 3 x max_step=0.719 deg) = 3.000 deg"
+ },
+ "handshake": {
+  "committed": true,
+  "attempts": 1,
+  "aborted": false,
+  "abort_reason": null,
+  "commit_phase": "pump",
+  "first_motion_t_s": 1.406,
+  "t102_continuous": true,
+  "resume_index": 0,
+  "resume_err_deg": 1.318,
+  "per_attempt": [
+   {
+    "attempt": 1,
+    "start_state": [
+     -0.0153,
+     0.0828,
+     1.623,
+     -0.0046,
+     -0.0031,
+     0.0261
+    ],
+    "startup_target_index": 6,
+    "startup_max_disp_deg": 2.74,
+    "committed": true,
+    "commit_phase": "pump",
+    "first_motion_t_s": 1.406,
+    "commit_state": [
+     -0.0077,
+     0.1058,
+     1.6337,
+     -0.0046,
+     -0.0031,
+     0.0261
+    ],
+    "t102_continuous": true,
+    "aborted": false,
+    "abort_reason": null
+   }
+  ]
+ },
+ "forward": {
+  "aborted": false,
+  "abort_reason": null,
+  "align_commands": 0,
+  "advance_commands": 101,
+  "commands_sent": 101,
+  "fb_ok": 101,
+  "fb_invalid": 0,
+  "max_tracking_err_rad": 0.11292994661049716,
+  "max_tracking_local_idx": 90,
+  "max_tracking_global_wp": 90,
+  "max_tracking_dominant_joint": "shoulder",
+  "first20_tracking": [
+   {
+    "idx": 0,
+    "global_wp": 0,
+    "track_deg": 1.318,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 1,
+    "global_wp": 1,
+    "track_deg": 1.333,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 2,
+    "global_wp": 2,
+    "track_deg": 1.355,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 3,
+    "global_wp": 3,
+    "track_deg": 1.385,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 4,
+    "global_wp": 4,
+    "track_deg": 1.422,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 5,
+    "global_wp": 5,
+    "track_deg": 1.467,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 6,
+    "global_wp": 6,
+    "track_deg": 1.686,
+    "dominant": "base"
+   },
+   {
+    "idx": 7,
+    "global_wp": 7,
+    "track_deg": 2.142,
+    "dominant": "base"
+   },
+   {
+    "idx": 8,
+    "global_wp": 8,
+    "track_deg": 2.598,
+    "dominant": "base"
+   },
+   {
+    "idx": 9,
+    "global_wp": 9,
+    "track_deg": 2.879,
+    "dominant": "base"
+   },
+   {
+    "idx": 10,
+    "global_wp": 10,
+    "track_deg": 3.159,
+    "dominant": "base"
+   },
+   {
+    "idx": 11,
+    "global_wp": 11,
+    "track_deg": 2.999,
+    "dominant": "base"
+   },
+   {
+    "idx": 12,
+    "global_wp": 12,
+    "track_deg": 3.015,
+    "dominant": "base"
+   },
+   {
+    "idx": 13,
+    "global_wp": 13,
+    "track_deg": 3.119,
+    "dominant": "base"
+   },
+   {
+    "idx": 14,
+    "global_wp": 14,
+    "track_deg": 2.783,
+    "dominant": "base"
+   },
+   {
+    "idx": 15,
+    "global_wp": 15,
+    "track_deg": 2.974,
+    "dominant": "base"
+   },
+   {
+    "idx": 16,
+    "global_wp": 16,
+    "track_deg": 3.077,
+    "dominant": "base"
+   },
+   {
+    "idx": 17,
+    "global_wp": 17,
+    "track_deg": 2.916,
+    "dominant": "base"
+   },
+   {
+    "idx": 18,
+    "global_wp": 18,
+    "track_deg": 3.018,
+    "dominant": "base"
+   },
+   {
+    "idx": 19,
+    "global_wp": 19,
+    "track_deg": 3.032,
+    "dominant": "base"
+   }
+  ],
+  "achieved_cmd_rate_hz": 19.8,
+  "freeze_windows": 0,
+  "max_meas_motion_over_1s_window_rad": 0.21936,
+  "final_xyz_mm": [
+   171.4629915,
+   135.9398671,
+   164.4741637
+  ],
+  "final_joints_rad": [
+   0.670349604,
+   -0.518485506,
+   2.159844949,
+   0.119650501,
+   -0.003067962,
+   0.026077673589793182
+  ],
+  "final_joint_err_rad": [
+   0.03277491690854473,
+   0.055954321144030095,
+   0.007469094369942919,
+   0.0035981653088695414,
+   0.0
+  ],
+  "final_joint_err_max_rad": 0.055954321144030095,
+  "resume_index": 0,
+  "resume_err_deg": 1.318
+ },
+ "reverse": {
+  "aborted": false,
+  "abort_reason": null,
+  "duration_s": 5.0,
+  "commands_sent": 101,
+  "fb_ok": 101,
+  "fb_invalid": 0,
+  "max_tracking_err_rad": 0.14293930065344318,
+  "max_tracking_local_idx": 17,
+  "max_tracking_global_wp": 17,
+  "max_tracking_dominant_joint": "shoulder",
+  "first20_tracking": [
+   {
+    "idx": 0,
+    "track_deg": 3.206,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 1,
+    "track_deg": 2.487,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 2,
+    "track_deg": 1.773,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 3,
+    "track_deg": 1.268,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 4,
+    "track_deg": 1.726,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 5,
+    "track_deg": 2.167,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 6,
+    "track_deg": 2.591,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 7,
+    "track_deg": 2.999,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 8,
+    "track_deg": 3.391,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 9,
+    "track_deg": 3.768,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 10,
+    "track_deg": 4.128,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 11,
+    "track_deg": 4.473,
+    "dominant": "wrist"
+   },
+   {
+    "idx": 12,
+    "track_deg": 5.035,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 13,
+    "track_deg": 5.68,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 14,
+    "track_deg": 6.318,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 15,
+    "track_deg": 6.949,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 16,
+    "track_deg": 7.573,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 17,
+    "track_deg": 8.19,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 18,
+    "track_deg": 7.481,
+    "dominant": "shoulder"
+   },
+   {
+    "idx": 19,
+    "track_deg": 7.381,
+    "dominant": "shoulder"
+   }
+  ],
+  "achieved_cmd_rate_hz": 19.988,
+  "median_cmd_interval_s": 0.047,
+  "max_cmd_interval_s": 0.063,
+  "min_cmd_interval_s": 0.0,
+  "freeze_windows": 0,
+  "max_meas_motion_over_1s_window_rad": 0.29913,
+  "final_xyz_mm": [
+   360.133296,
+   1.657324371,
+   157.5702833
+  ],
+  "final_joints_rad": [
+   0.004601942,
+   0.09664079,
+   1.67510702,
+   -0.007669904,
+   -0.003067962,
+   0.03834951958979316
+  ],
+  "final_joint_err_rad": [
+   0.019941749882089646,
+   0.0138062256809591,
+   0.05214616816202167,
+   0.0030591816378773232,
+   0.0
+  ],
+  "final_joint_err_max_rad": 0.05214616816202167
+ },
+ "forward_max_track_deg": 6.470409321419203,
+ "reverse_max_track_deg": 8.189818653993864,
+ "z0_mm": 178.1860122,
+ "measured_z_range_mm": [
+  143.3730717,
+  178.1860122
+ ],
+ "measured_z_max_deviation_mm": 34.812940499999996,
+ "return_home": {
+  "reached": true,
+  "err_rad": 0.075165059,
+  "polls": 25
+ }
+}

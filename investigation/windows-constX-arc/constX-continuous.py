@@ -627,19 +627,26 @@ def run_leg_tracked(arm, joints, leg_name, logf, z_record):
 
 
 def main():
+    global SPEED, ACC
     ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--port", default="COM21")
     ap.add_argument("--dry", action="store_true", help="home + plan + validate only, NO motion")
     ap.add_argument("--forward-only", action="store_true",
                     help="run the rule + forward leg only, skip the reverse leg")
     ap.add_argument("--tag", default="continuous", help="suffix for output files (per run)")
+    ap.add_argument("--speed", type=int, default=SPEED,
+                    help="override the joint speed (default %d = 1x; e.g. 3000 = 3x)" % SPEED)
+    ap.add_argument("--acc", type=int, default=ACC,
+                    help="override the joint acceleration (default %d = 1x; e.g. 150 = 3x)" % ACC)
     ap.add_argument("--out", default=os.path.join(here, "constX-%s-result.json" % "continuous"))
     ap.add_argument("--log", default=os.path.join(here, "constX-%s.log" % "continuous"))
     args = ap.parse_args()
     if args.tag != "continuous":
         args.out = os.path.join(here, "constX-%s-result.json" % args.tag)
         args.log = os.path.join(here, "constX-%s.log" % args.tag)
+    SPEED = args.speed
+    ACC = args.acc
 
     ik_mod, ik_path = cx.load_ik_module()
     ik_fn = ik_mod.compute_joint_rad_by_pos
