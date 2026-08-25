@@ -27,7 +27,8 @@ import time
 SPEED = 1000
 ACC = 50
 RATE_HZ = 20.0
-N_WAYPOINTS = 101
+MIN_WAYPOINTS = 101
+MAX_STEP_MM = 5.0
 
 ARC_CANDIDATES = [(80.0, 75.0), (80.0, 60.0), (60.0, 75.0), (60.0, 60.0)]
 JOINT_LIMITS = [(-3.3, 3.3), (-1.9, 1.9), (-1.2, 3.3), (-1.9, 1.9), (-3.3, 3.3), (-0.2, 1.9)]
@@ -68,7 +69,7 @@ def wait_valid_fb(arm, tries=10):
     return None
 
 
-def validate(joints, start_joints):
+def validate(joints, start_joints, max_excursion_rad):
     n = len(joints)
     for i in range(n):
         for k in range(6):
@@ -84,22 +85,24 @@ def validate(joints, start_joints):
                 return None
     for k in range(6):
         col = [j[k] for j in joints]
-        if max(col) - min(col) > MAX_EXCURSION_RAD:
+        if max(col) - min(col) > max_excursion_rad:
             return None
     return True
 
 
-def plan_arc(ik_fn, x0, y0, z0, pitch0, roll0, grip0, start_joints):
-    for R, S in ARC_CANDIDATES:
+def plan_arc(ik_fn, x0, y0, z0, pitch0, roll0, grip0, start_joints, candidates,
+             max_excursion_rad):
+    for R, S in candidates:
         Srad = math.radians(S)
+        n = max(MIN_WAYPOINTS, int(round(R * Srad / MAX_STEP_MM)) + 1)
         for offx, offy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
             cx, cy = x0 + R * offx, y0 + R * offy
             a0 = math.atan2(y0 - cy, x0 - cx)
             for sign in (1, -1):
                 waypoints, joints = [], []
                 ok = True
-                for i in range(N_WAYPOINTS):
-                    a = a0 + sign * Srad * i / (N_WAYPOINTS - 1)
+                for i in range(n):
+                    a = a0 + sign * Srad * i / (n - 1)
                     x, y = cx + R * math.cos(a), cy + R * math.sin(a)
                     try:
                         j5 = ik_fn(x, y, z0, roll0, pitch0)
@@ -108,10 +111,10 @@ def plan_arc(ik_fn, x0, y0, z0, pitch0, roll0, grip0, start_joints):
                         break
                     joints.append(j5 + [grip0])
                     waypoints.append([x, y, z0])
-                if not ok or not validate(joints, start_joints):
+                if not ok or not validate(joints, start_joints, max_excursion_rad):
                     continue
                 path_len = sum(
-                    math.dist(waypoints[i], waypoints[i + 1]) for i in range(N_WAYPOINTS - 1)
+                    math.dist(waypoints[i], waypoints[i + 1]) for i in range(n - 1)
                 )
                 xs = [w[0] for w in waypoints]
                 ys = [w[1] for w in waypoints]
@@ -120,11 +123,12 @@ def plan_arc(ik_fn, x0, y0, z0, pitch0, roll0, grip0, start_joints):
                 for k in range(5):
                     col = [j[k] for j in joints]
                     excursion[JOINT_NAMES[k]] = max(col) - min(col)
-                    for i in range(1, N_WAYPOINTS):
+                    for i in range(1, n):
                         max_step = max(max_step, abs(joints[i][k] - joints[i - 1][k]))
                 return {
                     "radius_mm": R,
                     "sweep_deg": S,
+                    "n_waypoints": n,
                     "center_mm": [cx, cy],
                     "sweep_sign": sign,
                     "waypoints": waypoints,
@@ -220,6 +224,9 @@ def run_leg(arm, joints, leg_name, logf, z_record):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--port", default="/dev/ttyUSB0")
+    ap.add_argument("--radius-mm", type=float, default=80.0)
+    ap.add_argument("--sweep-deg", type=float, default=75.0)
+    ap.add_argument("--max-excursion-deg", type=float, default=35.0)
     script_dir = os.path.dirname(os.path.abspath(__file__))
     ap.add_argument("--out", default=os.path.join(script_dir, "streamed-cartesian-result.json"))
     ap.add_argument("--log", default=os.path.join(script_dir, "streamed-cartesian.log"))
@@ -248,14 +255,20 @@ def main():
     print("start joints [%s]  grip=%.4f" % (
         " ".join("%.4f" % v for v in start_joints), grip0))
 
-    plan = plan_arc(ik_fn, x0, y0, z0, pitch0, roll0, grip0, start_joints)
+    candidates = [(args.radius_mm * f, args.sweep_deg * f) for f in (1.0, 0.75, 0.5, 0.35)]
+    for c in ARC_CANDIDATES:
+        if c not in candidates:
+            candidates.append(c)
+    plan = plan_arc(ik_fn, x0, y0, z0, pitch0, roll0, grip0, start_joints, candidates,
+                    math.radians(args.max_excursion_deg))
     if plan is None:
         raise SystemExit("no candidate arc passed validation; no motion sent")
     print("planned arc  R=%.0f mm  sweep=%.0f deg  sign=%+d  center=[%.1f %.1f]" % (
         plan["radius_mm"], plan["sweep_deg"], plan["sweep_sign"],
         plan["center_mm"][0], plan["center_mm"][1]))
     print("path length  %.1f mm   waypoints=%d   rate=%.0f Hz   duration=%.2f s" % (
-        plan["path_length_mm"], N_WAYPOINTS, RATE_HZ, (N_WAYPOINTS - 1) / RATE_HZ))
+        plan["path_length_mm"], plan["n_waypoints"], RATE_HZ,
+        (plan["n_waypoints"] - 1) / RATE_HZ))
     print("cartesian bbox mm  x=[%.2f %.2f]  y=[%.2f %.2f]  z=[%.2f %.2f]" % (
         plan["cartesian_bbox_mm"]["x"][0], plan["cartesian_bbox_mm"]["x"][1],
         plan["cartesian_bbox_mm"]["y"][0], plan["cartesian_bbox_mm"]["y"][1],
