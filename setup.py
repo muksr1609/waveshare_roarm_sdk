@@ -1,19 +1,27 @@
 # encoding=utf-8
 from __future__ import print_function
 import sys
+import textwrap
+
+import setuptools
 
 PYTHON_VERSION = sys.version_info[:2]
 if PYTHON_VERSION != (2, 7) and PYTHON_VERSION < (3, 5):
     print("This roarm_sdk version requires Python 2.7, 3.5 or later.")
     sys.exit(1)
 
-import setuptools
-import textwrap
-import roarm_sdk
+# Keep build metadata independent from importing roarm_sdk itself. Importing the
+# package imports the serial transport, but build isolation resolves runtime
+# dependencies only after metadata generation. Importing the package here therefore
+# made a normal `pip install` fail before pyserial could be installed.
+VERSION = "0.1.1"
+AUTHOR = "waveshareteam"
+AUTHOR_EMAIL = "2849678712@qq.com"
+GIT_URL = "https://github.com/waveshareteam/waveshare_roarm_sdk.git"
 
 install_requires = [
     "pyserial",
-    "requests"
+    "requests",
 ]
 
 if sys.version_info >= (3, 10):
@@ -33,16 +41,16 @@ except (FileNotFoundError, IOError):
 
 setuptools.setup(
     name="roarm_sdk",
-    version=roarm_sdk.__version__,
-    author=roarm_sdk.__author__,
-    author_email=roarm_sdk.__email__,
+    version=VERSION,
+    author=AUTHOR,
+    author_email=AUTHOR_EMAIL,
     description="waveshare roarm sdk.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url=roarm_sdk.__git_url__,
+    url=GIT_URL,
     packages=setuptools.find_packages(),
-    include_package_data=True,  # Include non-Python files, like JSON files
-    package_data={"roarm_sdk": ["*.json"]},  # Specify the JSON file(s) to include
+    include_package_data=True,
+    package_data={"roarm_sdk": ["*.json"]},
     classifiers=[
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.5",
@@ -51,7 +59,7 @@ setuptools.setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: GNU Affero General Public License v3",
         "Operating System :: OS Independent",
     ],
     install_requires=install_requires,
