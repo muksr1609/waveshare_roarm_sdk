@@ -1,0 +1,54 @@
+﻿=== environment ===
+python          3.12.10 (C:\Users\Mukund\AppData\Local\Programs\Python\Python312\python.exe)
+roarm-sdk       0.1.0
+roarm_sdk file  C:\Users\Mukund\AppData\Local\Programs\Python\Python312\Lib\site-packages\roarm_sdk\__init__.py
+pyserial        3.5
+ik module       C:\Users\Mukund\Documents\Ro-Arm\roarm_sdk\waveshare_ik.py
+platform        win32
+mode            DRY (no arc motion)
+opening COM21
+serial settings {"port": "COM21", "baudrate": 115200, "timeout": 0.1, "rtscts": false, "dsrdtr": false, "xonxoff": false, "rts": false, "dtr": true, "is_open": true}
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1213}
+pre-home pose xyz=[347.92 7.47 203.15] joints=[0.0215 0.0138 1.6214 -0.0046 -0.0031 0.0261]
+homing (move_init) ...
+b'{"T": 102, "base": 0, "shoulder": 0, "elbow": 1.5708, "wrist": 0, "roll": 0, "hand": 3.141592653589793, "spd": 100, "acc": 0}\n'
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1214}
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1213}
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1213}
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1212}
+home reached=True err=2.90 deg polls=4
+reading 10 consecutive feedback frames at home (stability gate)
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1212}
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1213}
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1213}
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1212}
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1213}
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1212}
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1212}
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1213}
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1213}
+{'T': 1051, 'x': 347.9208743, 'y': 7.473004018, 'z': 203.1510391, 'tit': 0.059825251, 'b': 0.021475731, 's': 0.013805827, 'e': 1.621417693, 't': -0.004601942, 'r': -0.003067962, 'g': 3.11551498, 'tB': -64, 'tS': 52, 'tE': 144, 'tT': -20, 'tR': 24, 'tG': -64, 'torswitchB': 1, 'torswitchS': 1, 'torswitchE': 1, 'torswitchT': 1, 'torswitchR': 1, 'torswitchG': 1, 'v': 1212}
+  frame  0 valid=True plausible=True xyz=[347.92 7.47 203.15]
+  frame  1 valid=True plausible=True xyz=[347.92 7.47 203.15]
+  frame  2 valid=True plausible=True xyz=[347.92 7.47 203.15]
+  frame  3 valid=True plausible=True xyz=[347.92 7.47 203.15]
+  frame  4 valid=True plausible=True xyz=[347.92 7.47 203.15]
+  frame  5 valid=True plausible=True xyz=[347.92 7.47 203.15]
+  frame  6 valid=True plausible=True xyz=[347.92 7.47 203.15]
+  frame  7 valid=True plausible=True xyz=[347.92 7.47 203.15]
+  frame  8 valid=True plausible=True xyz=[347.92 7.47 203.15]
+  frame  9 valid=True plausible=True xyz=[347.92 7.47 203.15]
+home pose   xyz=[347.92 7.47 203.15]  pitch=0.0598  roll=-0.0031  grip=0.0261
+home joints [0.0215 0.0138 1.6214 -0.0046 -0.0031 0.0261]
+planning R=150 mm / sweep=260 deg (all center/direction combinations)
+  reject   center=[497.9 7.5] sign=+1 reason=IK no finite solution
+  reject   center=[497.9 7.5] sign=-1 reason=IK no finite solution
+  reject   center=[197.9 7.5] sign=+1 reason=limit/step/jump/sanity
+  reject   center=[197.9 7.5] sign=-1 reason=limit/step/jump/sanity
+  reject   center=[347.9 157.5] sign=+1 reason=IK no finite solution
+  reject   center=[347.9 157.5] sign=-1 reason=IK no finite solution
+  reject   center=[347.9 -142.5] sign=+1 reason=IK no finite solution
+  reject   center=[347.9 -142.5] sign=-1 reason=IK no finite solution
+no center/direction keeps the arc inside the joint limits; NO motion sent
+wrote C:\Users\Mukund\Documents\Ro-Arm\investigation\windows-arc150-260\arc150-260-result.json
+RESULT: INFEASIBLE
