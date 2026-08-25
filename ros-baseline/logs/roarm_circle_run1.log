@@ -1,0 +1,52 @@
+CIRCLE_RUN1_START Tue Aug 25 12:56:21 BST 2026
+requester: making request: roarm_msgs.srv.MoveCircleCmd_Request(x0=0.2, y0=0.1, z0=0.2, x1=0.2, y1=0.2, z1=0.2)
+
+response:
+roarm_msgs.srv.MoveCircleCmd_Response(success=True, message='MoveCircleCmd executed successfully')
+
+CIRCLE_RUN1_RC=0 Tue Aug 25 12:56:30 BST 2026
+=== final get_pose_cmd ===
+requester: making request: roarm_msgs.srv.GetPoseCmd_Request()
+
+response:
+roarm_msgs.srv.GetPoseCmd_Response(x=0.19998846972179884, y=0.1999893059347044, z=0.1999944946206873, roll=7.25069258827716e-05, pitch=-6.148211241008283e-06, yaw=0.0)
+
+=== final joint_states ===
+A message was lost!!!
+	total count change:1
+	total count: 1---
+header:
+  stamp:
+    sec: 1787658991
+    nanosec: 824192316
+  frame_id: base_link
+name:
+- base_link_to_link1
+- link2_to_link3
+- link1_to_link2
+- link3_to_link4
+- link4_to_link5
+- link5_to_gripper_link
+position:
+- 0.7854002540458703
+- 1.9885999637775849
+- -0.25835179855960166
+- -0.15945798663432778
+- 7.25069258827716e-05
+- 0.0
+velocity:
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+effort:
+- .nan
+- .nan
+- .nan
+- .nan
+- .nan
+- .nan
+---
+CIRCLE_RUN1_END Tue Aug 25 12:56:31 BST 2026

@@ -1,0 +1,48 @@
++ export DEBIAN_FRONTEND=noninteractive
++ DEBIAN_FRONTEND=noninteractive
++ sudo apt install -y python3-pip
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  python3-wheel
+The following NEW packages will be installed:
+  python3-pip python3-wheel
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 1338 kB of archives.
+After this operation, 7214 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 python3-wheel all 0.37.1-2ubuntu0.22.04.1 [32.0 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 python3-pip all 22.0.2+dfsg-1ubuntu0.7 [1306 kB]
+Fetched 1338 kB in 0s (3662 kB/s)
+Selecting previously unselected package python3-wheel.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 145751 files and directories currently installed.)
+Preparing to unpack .../python3-wheel_0.37.1-2ubuntu0.22.04.1_all.deb ...
+Unpacking python3-wheel (0.37.1-2ubuntu0.22.04.1) ...
+Selecting previously unselected package python3-pip.
+Preparing to unpack .../python3-pip_22.0.2+dfsg-1ubuntu0.7_all.deb ...
+Unpacking python3-pip (22.0.2+dfsg-1ubuntu0.7) ...
+Setting up python3-wheel (0.37.1-2ubuntu0.22.04.1) ...
+Setting up python3-pip (22.0.2+dfsg-1ubuntu0.7) ...
+Processing triggers for man-db (2.10.2-1) ...
++ cd /home/mukund/roarm_ws
++ git rev-parse HEAD
+40dbd84b553695212fab713e8465f817ba95454d
++ pip3 install -r requirements.txt
+Defaulting to user installation because normal site-packages is not writeable
+Ignoring json: markers 'python_version < "3.10"' don't match your environment
+Requirement already satisfied: pyserial in /usr/lib/python3/dist-packages (from -r requirements.txt (line 1)) (3.5)
+Requirement already satisfied: requests in /usr/lib/python3/dist-packages (from -r requirements.txt (line 2)) (2.25.1)
+Collecting simplejson
+  Downloading simplejson-4.1.1-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (168 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 168.7/168.7 KB 8.3 MB/s eta 0:00:00
+Requirement already satisfied: pytest in /usr/lib/python3/dist-packages (from -r requirements.txt (line 5)) (6.2.5)
+Requirement already satisfied: flake8 in /usr/lib/python3/dist-packages (from -r requirements.txt (line 6)) (4.0.1)
+Collecting roarm-sdk==0.1.0
+  Downloading roarm_sdk-0.1.0-py3-none-any.whl (23 kB)
+Installing collected packages: simplejson, roarm-sdk
+Successfully installed roarm-sdk-0.1.0 simplejson-4.1.1
++ echo PIP_DONE
+PIP_DONE

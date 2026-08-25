@@ -1,0 +1,115 @@
+================ RETURN_TO_START before run 2 Tue Aug 25 13:01:14 BST 2026 ================
+requester: making request: roarm_msgs.srv.MoveJointCmd_Request(x=0.2739, y=0.0, z=0.098, roll=0.0, pitch=0.0, yaw=0.0)
+
+response:
+roarm_msgs.srv.MoveJointCmd_Response(success=True, message='MoveJointCmd executed successfully')
+
+================ CIRCLE RUN 2 Tue Aug 25 13:01:20 BST 2026 ================
+requester: making request: roarm_msgs.srv.MoveCircleCmd_Request(x0=0.2, y0=0.1, z0=0.2, x1=0.2, y1=0.2, z1=0.2)
+
+response:
+roarm_msgs.srv.MoveCircleCmd_Response(success=True, message='MoveCircleCmd executed successfully')
+
+================ FINAL POSE after run 2 ================
+requester: making request: roarm_msgs.srv.GetPoseCmd_Request()
+
+response:
+roarm_msgs.srv.GetPoseCmd_Response(x=0.1999970215149439, y=0.20001631305475837, z=0.19998551514855223, roll=1.7624254198744918e-05, pitch=0.00014092705165968944, yaw=0.0)
+
+================ JOINTS after run 2 ================
+position:
+- 0.7854463906392234
+- 1.9884033262248637
+- -0.25824580695863114
+- -0.1592202654196764
+- 1.7624254198744918e-05
+- 0.0
+velocity:
+- 0.0
+================ RETURN_TO_START before run 3 Tue Aug 25 13:01:32 BST 2026 ================
+requester: making request: roarm_msgs.srv.MoveJointCmd_Request(x=0.2739, y=0.0, z=0.098, roll=0.0, pitch=0.0, yaw=0.0)
+
+response:
+roarm_msgs.srv.MoveJointCmd_Response(success=True, message='MoveJointCmd executed successfully')
+
+================ CIRCLE RUN 3 Tue Aug 25 13:01:38 BST 2026 ================
+waiting for service to become available...
+requester: making request: roarm_msgs.srv.MoveCircleCmd_Request(x0=0.2, y0=0.1, z0=0.2, x1=0.2, y1=0.2, z1=0.2)
+
+response:
+roarm_msgs.srv.MoveCircleCmd_Response(success=True, message='MoveCircleCmd executed successfully')
+
+================ FINAL POSE after run 3 ================
+requester: making request: roarm_msgs.srv.GetPoseCmd_Request()
+
+response:
+roarm_msgs.srv.GetPoseCmd_Response(x=0.19999748331461664, y=0.2000172718072837, z=0.19996769177270368, roll=8.114806702360511e-05, pitch=0.00011428189380113807, yaw=0.0)
+
+================ JOINTS after run 3 ================
+position:
+- 0.7854476328042579
+- 1.9885460551974892
+- -0.25822749347349383
+- -0.15940795303529764
+- 8.114806702360511e-05
+- 0.0
+velocity:
+- 0.0
+================ RETURN_TO_START before run 4 Tue Aug 25 13:01:51 BST 2026 ================
+requester: making request: roarm_msgs.srv.MoveJointCmd_Request(x=0.2739, y=0.0, z=0.098, roll=0.0, pitch=0.0, yaw=0.0)
+
+response:
+roarm_msgs.srv.MoveJointCmd_Response(success=True, message='MoveJointCmd executed successfully')
+
+================ CIRCLE RUN 4 Tue Aug 25 13:01:57 BST 2026 ================
+waiting for service to become available...
+requester: making request: roarm_msgs.srv.MoveCircleCmd_Request(x0=0.2, y0=0.1, z0=0.2, x1=0.2, y1=0.2, z1=0.2)
+
+response:
+roarm_msgs.srv.MoveCircleCmd_Response(success=True, message='MoveCircleCmd executed successfully')
+
+================ FINAL POSE after run 4 ================
+requester: making request: roarm_msgs.srv.GetPoseCmd_Request()
+
+response:
+roarm_msgs.srv.GetPoseCmd_Response(x=0.20000958639071353, y=0.19996959465418016, z=0.200041710781566, roll=8.503981060348452e-05, pitch=-1.5042673982890165e-05, yaw=0.0)
+
+================ JOINTS after run 4 ================
+position:
+- 0.7852981788525136
+- 1.9883014576927143
+- -0.2583797240858251
+- -0.15914044948597544
+- 8.503981060348452e-05
+- 0.0
+velocity:
+- 0.0
+================ RETURN_TO_START before run 5 Tue Aug 25 13:02:09 BST 2026 ================
+requester: making request: roarm_msgs.srv.MoveJointCmd_Request(x=0.2739, y=0.0, z=0.098, roll=0.0, pitch=0.0, yaw=0.0)
+
+response:
+roarm_msgs.srv.MoveJointCmd_Response(success=True, message='MoveJointCmd executed successfully')
+
+================ CIRCLE RUN 5 Tue Aug 25 13:02:15 BST 2026 ================
+requester: making request: roarm_msgs.srv.MoveCircleCmd_Request(x0=0.2, y0=0.1, z0=0.2, x1=0.2, y1=0.2, z1=0.2)
+
+response:
+roarm_msgs.srv.MoveCircleCmd_Response(success=True, message='MoveCircleCmd executed successfully')
+
+================ FINAL POSE after run 5 ================
+requester: making request: roarm_msgs.srv.GetPoseCmd_Request()
+
+response:
+roarm_msgs.srv.GetPoseCmd_Response(x=0.1999858508386763, y=0.20001278678721585, z=0.20001553204287428, roll=1.6051834262907505e-05, pitch=-3.375959210116797e-05, yaw=0.0)
+
+================ JOINTS after run 5 ================
+position:
+- 0.7854655034980514
+- 1.9884461685254982
+- -0.25830103763550977
+- -0.15938256368719309
+- 1.6051834262907505e-05
+- 0.0
+velocity:
+- 0.0
+ALL_REPEATS_DONE Tue Aug 25 13:02:28 BST 2026

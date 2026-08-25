@@ -1,0 +1,642 @@
++ source /opt/ros/humble/setup.bash
+++ AMENT_SHELL=bash
+++++ dirname /opt/ros/humble/setup.bash
++++ builtin cd /opt/ros/humble
++++ pwd
+++ AMENT_CURRENT_PREFIX=/opt/ros/humble
+++ '[' -n '' ']'
+++ . /opt/ros/humble/setup.sh
++++ : /opt/ros/humble
++++ : bash
++++ _prefix_setup_IFS=' 	
+'
++++ IFS='
+'
++++ _UNIQUE_PREFIX_PATH=
++++ '[' -z SKIP_PARENT_PREFIX_PATH ']'
++++ ament_append_unique_value _UNIQUE_PREFIX_PATH /opt/ros/humble
++++ _listname=_UNIQUE_PREFIX_PATH
++++ _value=/opt/ros/humble
++++ eval '_values=$_UNIQUE_PREFIX_PATH'
+++++ _values=
++++ _duplicate=
++++ _ament_append_unique_value_IFS='
+'
++++ IFS=:
++++ '[' bash = zsh ']'
++++ unset _item
++++ '[' -z '' ']'
++++ '[' -z '' ']'
++++ eval '_UNIQUE_PREFIX_PATH="/opt/ros/humble"'
+++++ _UNIQUE_PREFIX_PATH=/opt/ros/humble
++++ IFS='
+'
++++ unset _ament_append_unique_value_IFS
++++ unset _duplicate
++++ unset _values
++++ unset _value
++++ unset _listname
++++ unset AMENT_CURRENT_PREFIX
++++ _prefix_setup_AMENT_SHELL=bash
++++ IFS=:
++++ '[' bash = zsh ']'
++++ for _path in $_UNIQUE_PREFIX_PATH
++++ '[' -n '' ']'
++++ '[' -f /opt/ros/humble/local_setup.bash ']'
++++ '[' bash = sh ']'
++++ IFS=' 	
+'
++++ . /opt/ros/humble/local_setup.bash
+++++ AMENT_SHELL=bash
+++++++ dirname /opt/ros/humble/local_setup.bash
++++++ builtin cd /opt/ros/humble
++++++ pwd
+++++ AMENT_CURRENT_PREFIX=/opt/ros/humble
+++++ '[' -n '' ']'
+++++ . /opt/ros/humble/local_setup.sh
++++++ _ament_prefix_sh_AMENT_CURRENT_PREFIX=/opt/ros/humble
++++++ '[' -z /opt/ros/humble ']'
++++++ _ament_prefix_sh_AMENT_CURRENT_PREFIX=/opt/ros/humble
++++++ : bash
++++++ _ament_python_executable=/usr/bin/python3
++++++ '[' -n '' ']'
++++++ '[' '!' -f /usr/bin/python3 ']'
++++++ _ament_additional_extension=
++++++ '[' bash '!=' sh ']'
++++++ _ament_additional_extension=bash
+++++++ /usr/bin/python3 /opt/ros/humble/_local_setup_util.py sh bash
++++++ _ament_ordered_commands='export AMENT_PREFIX_PATH="/opt/ros/humble:$AMENT_PREFIX_PATH"
+export PATH="/opt/ros/humble/bin:$PATH"
+export PYTHONPATH="/opt/ros/humble/local/lib/python3.10/dist-packages:$PYTHONPATH"
+export LD_LIBRARY_PATH="/opt/ros/humble/lib:$LD_LIBRARY_PATH"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh"
+export ROS_DISTRO="humble"
+export ROS_LOCALHOST_ONLY="0"
+export ROS_PYTHON_VERSION="3"
+export ROS_VERSION="2"
+export LD_LIBRARY_PATH="/opt/ros/humble/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH"
+export PYTHONPATH="/opt/ros/humble/lib/python3.10/site-packages:$PYTHONPATH"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash"
+export LD_LIBRARY_PATH="/opt/ros/humble/opt/rviz_ogre_vendor/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH=${AMENT_PREFIX_PATH#:}
+export AMENT_PREFIX_PATH=${AMENT_PREFIX_PATH%:}
+export PYTHONPATH=${PYTHONPATH#:}
+export PYTHONPATH=${PYTHONPATH%:}
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH#:}
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH%:}
+export ROS_DISTRO=${ROS_DISTRO#:}
+export ROS_DISTRO=${ROS_DISTRO%:}
+export ROS_PYTHON_VERSION=${ROS_PYTHON_VERSION#:}
+export ROS_PYTHON_VERSION=${ROS_PYTHON_VERSION%:}
+export ROS_VERSION=${ROS_VERSION#:}
+export ROS_VERSION=${ROS_VERSION%:}'
++++++ unset _ament_additional_extension
++++++ unset _ament_python_executable
++++++ '[' -n '' ']'
++++++ eval 'export AMENT_PREFIX_PATH="/opt/ros/humble:$AMENT_PREFIX_PATH"
+export PATH="/opt/ros/humble/bin:$PATH"
+export PYTHONPATH="/opt/ros/humble/local/lib/python3.10/dist-packages:$PYTHONPATH"
+export LD_LIBRARY_PATH="/opt/ros/humble/lib:$LD_LIBRARY_PATH"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh"
+export ROS_DISTRO="humble"
+export ROS_LOCALHOST_ONLY="0"
+export ROS_PYTHON_VERSION="3"
+export ROS_VERSION="2"
+export LD_LIBRARY_PATH="/opt/ros/humble/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH"
+export PYTHONPATH="/opt/ros/humble/lib/python3.10/site-packages:$PYTHONPATH"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash"
+export LD_LIBRARY_PATH="/opt/ros/humble/opt/rviz_ogre_vendor/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH=${AMENT_PREFIX_PATH#:}
+export AMENT_PREFIX_PATH=${AMENT_PREFIX_PATH%:}
+export PYTHONPATH=${PYTHONPATH#:}
+export PYTHONPATH=${PYTHONPATH%:}
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH#:}
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH%:}
+export ROS_DISTRO=${ROS_DISTRO#:}
+export ROS_DISTRO=${ROS_DISTRO%:}
+export ROS_PYTHON_VERSION=${ROS_PYTHON_VERSION#:}
+export ROS_PYTHON_VERSION=${ROS_PYTHON_VERSION%:}
+export ROS_VERSION=${ROS_VERSION#:}
+export ROS_VERSION=${ROS_VERSION%:}'
+++++++ export AMENT_PREFIX_PATH=/opt/ros/humble:
+++++++ AMENT_PREFIX_PATH=/opt/ros/humble:
+++++++ export 'PATH=/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/nodejs/:/mnt/c/Users/Mukund/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/Mukund/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/Mukund/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/Mukund/AppData/Local/Programs/arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi/bin:/mnt/c/Users/Mukund/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Mukund/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Mukund/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Mukund/dev/flutter/bin:/mnt/c/Users/Mukund/.local/bin:/mnt/c/Users/Mukund/AppData/Roaming/npm:/mnt/c/qwen38/shim'
+++++++ PATH='/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/nodejs/:/mnt/c/Users/Mukund/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/Mukund/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/Mukund/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/Mukund/AppData/Local/Programs/arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi/bin:/mnt/c/Users/Mukund/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Mukund/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Mukund/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Mukund/dev/flutter/bin:/mnt/c/Users/Mukund/.local/bin:/mnt/c/Users/Mukund/AppData/Roaming/npm:/mnt/c/qwen38/shim'
+++++++ export PYTHONPATH=/opt/ros/humble/local/lib/python3.10/dist-packages:
+++++++ PYTHONPATH=/opt/ros/humble/local/lib/python3.10/dist-packages:
+++++++ export LD_LIBRARY_PATH=/opt/ros/humble/lib:
+++++++ LD_LIBRARY_PATH=/opt/ros/humble/lib:
+++++++ AMENT_CURRENT_PREFIX=/opt/ros/humble
+++++++ _ament_prefix_sh_source_script /opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash
+++++++ '[' -f /opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash ']'
+++++++ '[' -n '' ']'
+++++++ . /opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash
++++++++ type register-python-argcomplete3
+++++++++ register-python-argcomplete3 ros2
++++++++ eval '
+_python_argcomplete() {
+    local IFS=$'\''\013'\''
+    local SUPPRESS_SPACE=0
+    if compopt +o nospace 2> /dev/null; then
+        SUPPRESS_SPACE=1
+    fi
+    COMPREPLY=( $(IFS="$IFS" \
+                  COMP_LINE="$COMP_LINE" \
+                  COMP_POINT="$COMP_POINT" \
+                  COMP_TYPE="$COMP_TYPE" \
+                  _ARGCOMPLETE_COMP_WORDBREAKS="$COMP_WORDBREAKS" \
+                  _ARGCOMPLETE=1 \
+                  _ARGCOMPLETE_SUPPRESS_SPACE=$SUPPRESS_SPACE \
+                  "$1" 8>&1 9>&2 1>/dev/null 2>/dev/null) )
+    if [[ $? != 0 ]]; then
+        unset COMPREPLY
+    elif [[ $SUPPRESS_SPACE == 1 ]] && [[ "$COMPREPLY" =~ [=/:]$ ]]; then
+        compopt -o nospace
+    fi
+}
+complete -o nospace -o default -F _python_argcomplete "ros2"'
+++++++++ complete -o nospace -o default -F _python_argcomplete ros2
+++++++ AMENT_CURRENT_PREFIX=/opt/ros/humble
+++++++ _ament_prefix_sh_source_script /opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh
+++++++ '[' -f /opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh ']'
+++++++ '[' -n '' ']'
+++++++ . /opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh
++++++++ '[' -n '' -a '' '!=' humble ']'
+++++++ export ROS_DISTRO=humble
+++++++ ROS_DISTRO=humble
+++++++ export ROS_LOCALHOST_ONLY=0
+++++++ ROS_LOCALHOST_ONLY=0
+++++++ export ROS_PYTHON_VERSION=3
+++++++ ROS_PYTHON_VERSION=3
+++++++ export ROS_VERSION=2
+++++++ ROS_VERSION=2
+++++++ export LD_LIBRARY_PATH=/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:
+++++++ LD_LIBRARY_PATH=/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:
+++++++ export PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:
+++++++ PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:
+++++++ AMENT_CURRENT_PREFIX=/opt/ros/humble
+++++++ _ament_prefix_sh_source_script /opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash
+++++++ '[' -f /opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash ']'
+++++++ '[' -n '' ']'
+++++++ . /opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash
++++++++ type register-python-argcomplete3
+++++++++ register-python-argcomplete3 rosidl
++++++++ eval '
+_python_argcomplete() {
+    local IFS=$'\''\013'\''
+    local SUPPRESS_SPACE=0
+    if compopt +o nospace 2> /dev/null; then
+        SUPPRESS_SPACE=1
+    fi
+    COMPREPLY=( $(IFS="$IFS" \
+                  COMP_LINE="$COMP_LINE" \
+                  COMP_POINT="$COMP_POINT" \
+                  COMP_TYPE="$COMP_TYPE" \
+                  _ARGCOMPLETE_COMP_WORDBREAKS="$COMP_WORDBREAKS" \
+                  _ARGCOMPLETE=1 \
+                  _ARGCOMPLETE_SUPPRESS_SPACE=$SUPPRESS_SPACE \
+                  "$1" 8>&1 9>&2 1>/dev/null 2>/dev/null) )
+    if [[ $? != 0 ]]; then
+        unset COMPREPLY
+    elif [[ $SUPPRESS_SPACE == 1 ]] && [[ "$COMPREPLY" =~ [=/:]$ ]]; then
+        compopt -o nospace
+    fi
+}
+complete -o nospace -o default -F _python_argcomplete "rosidl"'
+++++++++ complete -o nospace -o default -F _python_argcomplete rosidl
+++++++ export LD_LIBRARY_PATH=/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:
+++++++ LD_LIBRARY_PATH=/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:
+++++++ export AMENT_PREFIX_PATH=/opt/ros/humble:
+++++++ AMENT_PREFIX_PATH=/opt/ros/humble:
+++++++ export AMENT_PREFIX_PATH=/opt/ros/humble
+++++++ AMENT_PREFIX_PATH=/opt/ros/humble
+++++++ export PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:
+++++++ PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:
+++++++ export PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+++++++ PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+++++++ export LD_LIBRARY_PATH=/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:
+++++++ LD_LIBRARY_PATH=/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:
+++++++ export LD_LIBRARY_PATH=/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++++ LD_LIBRARY_PATH=/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++++ export ROS_DISTRO=humble
+++++++ ROS_DISTRO=humble
+++++++ export ROS_DISTRO=humble
+++++++ ROS_DISTRO=humble
+++++++ export ROS_PYTHON_VERSION=3
+++++++ ROS_PYTHON_VERSION=3
+++++++ export ROS_PYTHON_VERSION=3
+++++++ ROS_PYTHON_VERSION=3
+++++++ export ROS_VERSION=2
+++++++ ROS_VERSION=2
+++++++ export ROS_VERSION=2
+++++++ ROS_VERSION=2
++++++ unset _ament_ordered_commands
++++++ unset _ament_prefix_sh_source_script
++++++ unset _ament_prefix_sh_AMENT_CURRENT_PREFIX
++++ AMENT_SHELL=bash
++++ unset _path
++++ IFS=' 	
+'
++++ unset _prefix_setup_IFS
++++ unset _prefix_setup_AMENT_SHELL
++++ unset _UNIQUE_PREFIX_PATH
++++ unset AMENT_SHELL
++ source /home/mukund/roarm_ws/install/setup.bash
+++ COLCON_CURRENT_PREFIX=/opt/ros/humble
+++ _colcon_prefix_chain_bash_source_script /opt/ros/humble/local_setup.bash
+++ '[' -f /opt/ros/humble/local_setup.bash ']'
+++ '[' -n '' ']'
+++ . /opt/ros/humble/local_setup.bash
++++ AMENT_SHELL=bash
++++++ dirname /opt/ros/humble/local_setup.bash
+++++ builtin cd /opt/ros/humble
+++++ pwd
++++ AMENT_CURRENT_PREFIX=/opt/ros/humble
++++ '[' -n '' ']'
++++ . /opt/ros/humble/local_setup.sh
+++++ _ament_prefix_sh_AMENT_CURRENT_PREFIX=/opt/ros/humble
+++++ '[' -z /opt/ros/humble ']'
+++++ _ament_prefix_sh_AMENT_CURRENT_PREFIX=/opt/ros/humble
+++++ : bash
+++++ _ament_python_executable=/usr/bin/python3
+++++ '[' -n '' ']'
+++++ '[' '!' -f /usr/bin/python3 ']'
+++++ _ament_additional_extension=
+++++ '[' bash '!=' sh ']'
+++++ _ament_additional_extension=bash
++++++ /usr/bin/python3 /opt/ros/humble/_local_setup_util.py sh bash
+++++ _ament_ordered_commands='AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh"
+export ROS_DISTRO="humble"
+# export ROS_LOCALHOST_ONLY="0"
+export ROS_PYTHON_VERSION="3"
+export ROS_VERSION="2"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash"'
+++++ unset _ament_additional_extension
+++++ unset _ament_python_executable
+++++ '[' -n '' ']'
+++++ eval 'AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh"
+export ROS_DISTRO="humble"
+# export ROS_LOCALHOST_ONLY="0"
+export ROS_PYTHON_VERSION="3"
+export ROS_VERSION="2"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash"'
++++++ AMENT_CURRENT_PREFIX=/opt/ros/humble
++++++ _ament_prefix_sh_source_script /opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash
++++++ '[' -f /opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash ']'
++++++ '[' -n '' ']'
++++++ . /opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash
+++++++ type register-python-argcomplete3
++++++++ register-python-argcomplete3 ros2
+++++++ eval '
+_python_argcomplete() {
+    local IFS=$'\''\013'\''
+    local SUPPRESS_SPACE=0
+    if compopt +o nospace 2> /dev/null; then
+        SUPPRESS_SPACE=1
+    fi
+    COMPREPLY=( $(IFS="$IFS" \
+                  COMP_LINE="$COMP_LINE" \
+                  COMP_POINT="$COMP_POINT" \
+                  COMP_TYPE="$COMP_TYPE" \
+                  _ARGCOMPLETE_COMP_WORDBREAKS="$COMP_WORDBREAKS" \
+                  _ARGCOMPLETE=1 \
+                  _ARGCOMPLETE_SUPPRESS_SPACE=$SUPPRESS_SPACE \
+                  "$1" 8>&1 9>&2 1>/dev/null 2>/dev/null) )
+    if [[ $? != 0 ]]; then
+        unset COMPREPLY
+    elif [[ $SUPPRESS_SPACE == 1 ]] && [[ "$COMPREPLY" =~ [=/:]$ ]]; then
+        compopt -o nospace
+    fi
+}
+complete -o nospace -o default -F _python_argcomplete "ros2"'
++++++++ complete -o nospace -o default -F _python_argcomplete ros2
++++++ AMENT_CURRENT_PREFIX=/opt/ros/humble
++++++ _ament_prefix_sh_source_script /opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh
++++++ '[' -f /opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh ']'
++++++ '[' -n '' ']'
++++++ . /opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh
+++++++ '[' -n humble -a humble '!=' humble ']'
++++++ export ROS_DISTRO=humble
++++++ ROS_DISTRO=humble
++++++ export ROS_PYTHON_VERSION=3
++++++ ROS_PYTHON_VERSION=3
++++++ export ROS_VERSION=2
++++++ ROS_VERSION=2
++++++ AMENT_CURRENT_PREFIX=/opt/ros/humble
++++++ _ament_prefix_sh_source_script /opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash
++++++ '[' -f /opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash ']'
++++++ '[' -n '' ']'
++++++ . /opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash
+++++++ type register-python-argcomplete3
++++++++ register-python-argcomplete3 rosidl
+++++++ eval '
+_python_argcomplete() {
+    local IFS=$'\''\013'\''
+    local SUPPRESS_SPACE=0
+    if compopt +o nospace 2> /dev/null; then
+        SUPPRESS_SPACE=1
+    fi
+    COMPREPLY=( $(IFS="$IFS" \
+                  COMP_LINE="$COMP_LINE" \
+                  COMP_POINT="$COMP_POINT" \
+                  COMP_TYPE="$COMP_TYPE" \
+                  _ARGCOMPLETE_COMP_WORDBREAKS="$COMP_WORDBREAKS" \
+                  _ARGCOMPLETE=1 \
+                  _ARGCOMPLETE_SUPPRESS_SPACE=$SUPPRESS_SPACE \
+                  "$1" 8>&1 9>&2 1>/dev/null 2>/dev/null) )
+    if [[ $? != 0 ]]; then
+        unset COMPREPLY
+    elif [[ $SUPPRESS_SPACE == 1 ]] && [[ "$COMPREPLY" =~ [=/:]$ ]]; then
+        compopt -o nospace
+    fi
+}
+complete -o nospace -o default -F _python_argcomplete "rosidl"'
++++++++ complete -o nospace -o default -F _python_argcomplete rosidl
+++++ unset _ament_ordered_commands
+++++ unset _ament_prefix_sh_source_script
+++++ unset _ament_prefix_sh_AMENT_CURRENT_PREFIX
+++++ dirname /home/mukund/roarm_ws/install/setup.bash
++++ builtin cd /home/mukund/roarm_ws/install
++++ pwd
+++ COLCON_CURRENT_PREFIX=/home/mukund/roarm_ws/install
+++ _colcon_prefix_chain_bash_source_script /home/mukund/roarm_ws/install/local_setup.bash
+++ '[' -f /home/mukund/roarm_ws/install/local_setup.bash ']'
+++ '[' -n '' ']'
+++ . /home/mukund/roarm_ws/install/local_setup.bash
++++ '[' -z /home/mukund/roarm_ws/install ']'
++++ _colcon_prefix_bash_COLCON_CURRENT_PREFIX=/home/mukund/roarm_ws/install
++++ _colcon_prefix_bash_prepend_unique_value COLCON_PREFIX_PATH /home/mukund/roarm_ws/install
++++ _listname=COLCON_PREFIX_PATH
++++ _value=/home/mukund/roarm_ws/install
++++ eval '_values="$COLCON_PREFIX_PATH"'
+++++ _values=
++++ _colcon_prefix_bash_prepend_unique_value_IFS=' 	
+'
++++ IFS=:
++++ _all_values=/home/mukund/roarm_ws/install
++++ _contained_value=
++++ unset _item
++++ '[' -z '' ']'
++++ '[' -n '' ']'
++++ unset _contained_value
++++ IFS=' 	
+'
++++ unset _colcon_prefix_bash_prepend_unique_value_IFS
++++ eval export 'COLCON_PREFIX_PATH="/home/mukund/roarm_ws/install"'
+++++ export COLCON_PREFIX_PATH=/home/mukund/roarm_ws/install
+++++ COLCON_PREFIX_PATH=/home/mukund/roarm_ws/install
++++ unset _all_values
++++ unset _values
++++ unset _value
++++ unset _listname
++++ unset _colcon_prefix_bash_prepend_unique_value
++++ '[' -n '' ']'
++++ _colcon_python_executable=/usr/bin/python3
++++ '[' '!' -f /usr/bin/python3 ']'
+++++ /usr/bin/python3 /home/mukund/roarm_ws/install/_local_setup_util_sh.py sh bash
++++ _colcon_ordered_commands='export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:$AMENT_PREFIX_PATH"
+export PYTHONPATH="/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages:$PYTHONPATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_description:$CMAKE_PREFIX_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_description:$AMENT_PREFIX_PATH"
+export PYTHONPATH="/home/mukund/roarm_ws/install/roarm_driver/lib/python3.10/site-packages:$PYTHONPATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_driver:$AMENT_PREFIX_PATH"
+export PYTHONPATH="/home/mukund/roarm_ws/build/roarm_driver:$PYTHONPATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit:$CMAKE_PREFIX_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_msgs:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/roarm_msgs/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_msgs:$AMENT_PREFIX_PATH"
+export PYTHONPATH="/home/mukund/roarm_ws/install/roarm_msgs/local/lib/python3.10/dist-packages:$PYTHONPATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_servo:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/moveit_servo/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_servo:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit_cmd:$CMAKE_PREFIX_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit_cmd:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/rviz_marker_tools:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/rviz_marker_tools/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/rviz_marker_tools:$AMENT_PREFIX_PATH"
+export CMAKE_MODULE_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_core/share/moveit_task_constructor_core/cmake:$CMAKE_MODULE_PATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_core:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_core/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_core:$AMENT_PREFIX_PATH"
+export PYTHONPATH="/home/mukund/roarm_ws/install/moveit_task_constructor_core/local/lib/python3.10/dist-packages:$PYTHONPATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_visualization/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH#:}
+export CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH%:}
+export CMAKE_MODULE_PATH=${CMAKE_MODULE_PATH#:}
+export CMAKE_MODULE_PATH=${CMAKE_MODULE_PATH%:}'
++++ unset _colcon_python_executable
++++ '[' -n '' ']'
++++ eval 'export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:$AMENT_PREFIX_PATH"
+export PYTHONPATH="/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages:$PYTHONPATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_description:$CMAKE_PREFIX_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_description:$AMENT_PREFIX_PATH"
+export PYTHONPATH="/home/mukund/roarm_ws/install/roarm_driver/lib/python3.10/site-packages:$PYTHONPATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_driver:$AMENT_PREFIX_PATH"
+export PYTHONPATH="/home/mukund/roarm_ws/build/roarm_driver:$PYTHONPATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit:$CMAKE_PREFIX_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_msgs:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/roarm_msgs/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_msgs:$AMENT_PREFIX_PATH"
+export PYTHONPATH="/home/mukund/roarm_ws/install/roarm_msgs/local/lib/python3.10/dist-packages:$PYTHONPATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_servo:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/moveit_servo/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_servo:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit_cmd:$CMAKE_PREFIX_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit_cmd:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/rviz_marker_tools:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/rviz_marker_tools/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/rviz_marker_tools:$AMENT_PREFIX_PATH"
+export CMAKE_MODULE_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_core/share/moveit_task_constructor_core/cmake:$CMAKE_MODULE_PATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_core:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_core/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_core:$AMENT_PREFIX_PATH"
+export PYTHONPATH="/home/mukund/roarm_ws/install/moveit_task_constructor_core/local/lib/python3.10/dist-packages:$PYTHONPATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_visualization/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH="/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH#:}
+export CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH%:}
+export CMAKE_MODULE_PATH=${CMAKE_MODULE_PATH#:}
+export CMAKE_MODULE_PATH=${CMAKE_MODULE_PATH%:}'
+++++ export CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ export LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ export AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ export PYTHONPATH=/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+++++ PYTHONPATH=/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+++++ export CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ export AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ export PYTHONPATH=/home/mukund/roarm_ws/install/roarm_driver/lib/python3.10/site-packages:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+++++ PYTHONPATH=/home/mukund/roarm_ws/install/roarm_driver/lib/python3.10/site-packages:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+++++ export AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ export PYTHONPATH=/home/mukund/roarm_ws/build/roarm_driver:/home/mukund/roarm_ws/install/roarm_driver/lib/python3.10/site-packages:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+++++ PYTHONPATH=/home/mukund/roarm_ws/build/roarm_driver:/home/mukund/roarm_ws/install/roarm_driver/lib/python3.10/site-packages:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+++++ export CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ export AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ export CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ export LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ export AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ export CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ export LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/roarm_msgs/lib:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/roarm_msgs/lib:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ export AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ export PYTHONPATH=/home/mukund/roarm_ws/install/roarm_msgs/local/lib/python3.10/dist-packages:/home/mukund/roarm_ws/build/roarm_driver:/home/mukund/roarm_ws/install/roarm_driver/lib/python3.10/site-packages:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+++++ PYTHONPATH=/home/mukund/roarm_ws/install/roarm_msgs/local/lib/python3.10/dist-packages:/home/mukund/roarm_ws/build/roarm_driver:/home/mukund/roarm_ws/install/roarm_driver/lib/python3.10/site-packages:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+++++ export CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ export LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/moveit_servo/lib:/home/mukund/roarm_ws/install/roarm_msgs/lib:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/moveit_servo/lib:/home/mukund/roarm_ws/install/roarm_msgs/lib:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ export AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ export CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ export AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ export CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ export LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/rviz_marker_tools/lib:/home/mukund/roarm_ws/install/moveit_servo/lib:/home/mukund/roarm_ws/install/roarm_msgs/lib:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/rviz_marker_tools/lib:/home/mukund/roarm_ws/install/moveit_servo/lib:/home/mukund/roarm_ws/install/roarm_msgs/lib:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ export AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ export CMAKE_MODULE_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_core/share/moveit_task_constructor_core/cmake:
+++++ CMAKE_MODULE_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_core/share/moveit_task_constructor_core/cmake:
+++++ export CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ export LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_core/lib:/home/mukund/roarm_ws/install/rviz_marker_tools/lib:/home/mukund/roarm_ws/install/moveit_servo/lib:/home/mukund/roarm_ws/install/roarm_msgs/lib:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_core/lib:/home/mukund/roarm_ws/install/rviz_marker_tools/lib:/home/mukund/roarm_ws/install/moveit_servo/lib:/home/mukund/roarm_ws/install/roarm_msgs/lib:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ export AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ export PYTHONPATH=/home/mukund/roarm_ws/install/moveit_task_constructor_core/local/lib/python3.10/dist-packages:/home/mukund/roarm_ws/install/roarm_msgs/local/lib/python3.10/dist-packages:/home/mukund/roarm_ws/build/roarm_driver:/home/mukund/roarm_ws/install/roarm_driver/lib/python3.10/site-packages:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+++++ PYTHONPATH=/home/mukund/roarm_ws/install/moveit_task_constructor_core/local/lib/python3.10/dist-packages:/home/mukund/roarm_ws/install/roarm_msgs/local/lib/python3.10/dist-packages:/home/mukund/roarm_ws/build/roarm_driver:/home/mukund/roarm_ws/install/roarm_driver/lib/python3.10/site-packages:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+++++ export CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ export LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_core/lib:/home/mukund/roarm_ws/install/rviz_marker_tools/lib:/home/mukund/roarm_ws/install/moveit_servo/lib:/home/mukund/roarm_ws/install/roarm_msgs/lib:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_core/lib:/home/mukund/roarm_ws/install/rviz_marker_tools/lib:/home/mukund/roarm_ws/install/moveit_servo/lib:/home/mukund/roarm_ws/install/roarm_msgs/lib:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ export AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ export CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ export LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_visualization/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_core/lib:/home/mukund/roarm_ws/install/rviz_marker_tools/lib:/home/mukund/roarm_ws/install/moveit_servo/lib:/home/mukund/roarm_ws/install/roarm_msgs/lib:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_visualization/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_core/lib:/home/mukund/roarm_ws/install/rviz_marker_tools/lib:/home/mukund/roarm_ws/install/moveit_servo/lib:/home/mukund/roarm_ws/install/roarm_msgs/lib:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ export AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ export CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo:/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo:/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ export LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_visualization/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_core/lib:/home/mukund/roarm_ws/install/rviz_marker_tools/lib:/home/mukund/roarm_ws/install/moveit_servo/lib:/home/mukund/roarm_ws/install/roarm_msgs/lib:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ LD_LIBRARY_PATH=/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_visualization/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_core/lib:/home/mukund/roarm_ws/install/rviz_marker_tools/lib:/home/mukund/roarm_ws/install/moveit_servo/lib:/home/mukund/roarm_ws/install/roarm_msgs/lib:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins/lib:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++ export AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo:/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ AMENT_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo:/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_driver:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:/opt/ros/humble
+++++ export CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo:/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo:/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs:
+++++ export CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo:/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs
+++++ CMAKE_PREFIX_PATH=/home/mukund/roarm_ws/install/roarm_moveit_mtc_demo:/home/mukund/roarm_ws/install/moveit_task_constructor_visualization:/home/mukund/roarm_ws/install/moveit_task_constructor_capabilities:/home/mukund/roarm_ws/install/moveit_task_constructor_core:/home/mukund/roarm_ws/install/rviz_marker_tools:/home/mukund/roarm_ws/install/roarm_moveit_cmd:/home/mukund/roarm_ws/install/moveit_servo:/home/mukund/roarm_ws/install/roarm_msgs:/home/mukund/roarm_ws/install/roarm_moveit_ikfast_plugins:/home/mukund/roarm_ws/install/roarm_moveit:/home/mukund/roarm_ws/install/roarm_description:/home/mukund/roarm_ws/install/moveit_task_constructor_msgs
+++++ export CMAKE_MODULE_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_core/share/moveit_task_constructor_core/cmake:
+++++ CMAKE_MODULE_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_core/share/moveit_task_constructor_core/cmake:
+++++ export CMAKE_MODULE_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_core/share/moveit_task_constructor_core/cmake
+++++ CMAKE_MODULE_PATH=/home/mukund/roarm_ws/install/moveit_task_constructor_core/share/moveit_task_constructor_core/cmake
++++ unset _colcon_ordered_commands
++++ unset _colcon_prefix_sh_source_script
++++ unset _colcon_prefix_bash_COLCON_CURRENT_PREFIX
+++ unset COLCON_CURRENT_PREFIX
+++ unset _colcon_prefix_chain_bash_source_script
++ export ROARM_MODEL=roarm_m3
++ ROARM_MODEL=roarm_m3
++ cd /home/mukund/roarm_ws
++ echo '=== package.xml of roarm_moveit_servo ==='
+=== package.xml of roarm_moveit_servo ===
++ cat src/roarm_main/roarm_moveit_servo/package.xml
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>roarm_moveit_servo</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="effectsmachine@outlook.com">roarm</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>moveit_common</depend>
+
+  <depend>control_msgs</depend>
+  <depend>control_toolbox</depend>
+  <depend>geometry_msgs</depend>
+  <depend>moveit_msgs</depend>
+  <depend>moveit_core</depend>
+  <depend>moveit_ros_planning_interface</depend>
+  <depend>pluginlib</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>tf2_eigen</depend>
+  <depend>trajectory_msgs</depend>
+
+  <exec_depend>gripper_controllers</exec_depend>
+  <exec_depend>joint_state_broadcaster</exec_depend>
+  <exec_depend>joint_trajectory_controller</exec_depend>
+  <exec_depend>joy</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>moveit_configs_utils</exec_depend>
+  <exec_depend>launch_param_builder</exec_depend>
+
+  <test_depend>ament_cmake_gtest</test_depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+  <test_depend>controller_manager</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+</package>
++ echo '=== retry build (with workspace install sourced) ==='
+=== retry build (with workspace install sourced) ===
++ colcon build --packages-select roarm_moveit_servo
+Starting >>> roarm_moveit_servo
+Finished <<< roarm_moveit_servo [12.1s]
+
+Summary: 1 package finished [12.4s]
++ echo 'RETRY_DONE rc=0'
+RETRY_DONE rc=0

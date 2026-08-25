@@ -1,0 +1,506 @@
++ source /opt/ros/humble/setup.bash
+++ AMENT_SHELL=bash
+++++ dirname /opt/ros/humble/setup.bash
++++ builtin cd /opt/ros/humble
++++ pwd
+++ AMENT_CURRENT_PREFIX=/opt/ros/humble
+++ '[' -n '' ']'
+++ . /opt/ros/humble/setup.sh
++++ : /opt/ros/humble
++++ : bash
++++ _prefix_setup_IFS=' 	
+'
++++ IFS='
+'
++++ _UNIQUE_PREFIX_PATH=
++++ '[' -z SKIP_PARENT_PREFIX_PATH ']'
++++ ament_append_unique_value _UNIQUE_PREFIX_PATH /opt/ros/humble
++++ _listname=_UNIQUE_PREFIX_PATH
++++ _value=/opt/ros/humble
++++ eval '_values=$_UNIQUE_PREFIX_PATH'
+++++ _values=
++++ _duplicate=
++++ _ament_append_unique_value_IFS='
+'
++++ IFS=:
++++ '[' bash = zsh ']'
++++ unset _item
++++ '[' -z '' ']'
++++ '[' -z '' ']'
++++ eval '_UNIQUE_PREFIX_PATH="/opt/ros/humble"'
+++++ _UNIQUE_PREFIX_PATH=/opt/ros/humble
++++ IFS='
+'
++++ unset _ament_append_unique_value_IFS
++++ unset _duplicate
++++ unset _values
++++ unset _value
++++ unset _listname
++++ unset AMENT_CURRENT_PREFIX
++++ _prefix_setup_AMENT_SHELL=bash
++++ IFS=:
++++ '[' bash = zsh ']'
++++ for _path in $_UNIQUE_PREFIX_PATH
++++ '[' -n '' ']'
++++ '[' -f /opt/ros/humble/local_setup.bash ']'
++++ '[' bash = sh ']'
++++ IFS=' 	
+'
++++ . /opt/ros/humble/local_setup.bash
+++++ AMENT_SHELL=bash
+++++++ dirname /opt/ros/humble/local_setup.bash
++++++ builtin cd /opt/ros/humble
++++++ pwd
+++++ AMENT_CURRENT_PREFIX=/opt/ros/humble
+++++ '[' -n '' ']'
+++++ . /opt/ros/humble/local_setup.sh
++++++ _ament_prefix_sh_AMENT_CURRENT_PREFIX=/opt/ros/humble
++++++ '[' -z /opt/ros/humble ']'
++++++ _ament_prefix_sh_AMENT_CURRENT_PREFIX=/opt/ros/humble
++++++ : bash
++++++ _ament_python_executable=/usr/bin/python3
++++++ '[' -n '' ']'
++++++ '[' '!' -f /usr/bin/python3 ']'
++++++ _ament_additional_extension=
++++++ '[' bash '!=' sh ']'
++++++ _ament_additional_extension=bash
+++++++ /usr/bin/python3 /opt/ros/humble/_local_setup_util.py sh bash
++++++ _ament_ordered_commands='export AMENT_PREFIX_PATH="/opt/ros/humble:$AMENT_PREFIX_PATH"
+export PATH="/opt/ros/humble/bin:$PATH"
+export PYTHONPATH="/opt/ros/humble/local/lib/python3.10/dist-packages:$PYTHONPATH"
+export LD_LIBRARY_PATH="/opt/ros/humble/lib:$LD_LIBRARY_PATH"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh"
+export ROS_DISTRO="humble"
+export ROS_LOCALHOST_ONLY="0"
+export ROS_PYTHON_VERSION="3"
+export ROS_VERSION="2"
+export LD_LIBRARY_PATH="/opt/ros/humble/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH"
+export PYTHONPATH="/opt/ros/humble/lib/python3.10/site-packages:$PYTHONPATH"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash"
+export LD_LIBRARY_PATH="/opt/ros/humble/opt/rviz_ogre_vendor/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH=${AMENT_PREFIX_PATH#:}
+export AMENT_PREFIX_PATH=${AMENT_PREFIX_PATH%:}
+export PYTHONPATH=${PYTHONPATH#:}
+export PYTHONPATH=${PYTHONPATH%:}
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH#:}
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH%:}
+export ROS_DISTRO=${ROS_DISTRO#:}
+export ROS_DISTRO=${ROS_DISTRO%:}
+export ROS_PYTHON_VERSION=${ROS_PYTHON_VERSION#:}
+export ROS_PYTHON_VERSION=${ROS_PYTHON_VERSION%:}
+export ROS_VERSION=${ROS_VERSION#:}
+export ROS_VERSION=${ROS_VERSION%:}'
++++++ unset _ament_additional_extension
++++++ unset _ament_python_executable
++++++ '[' -n '' ']'
++++++ eval 'export AMENT_PREFIX_PATH="/opt/ros/humble:$AMENT_PREFIX_PATH"
+export PATH="/opt/ros/humble/bin:$PATH"
+export PYTHONPATH="/opt/ros/humble/local/lib/python3.10/dist-packages:$PYTHONPATH"
+export LD_LIBRARY_PATH="/opt/ros/humble/lib:$LD_LIBRARY_PATH"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh"
+export ROS_DISTRO="humble"
+export ROS_LOCALHOST_ONLY="0"
+export ROS_PYTHON_VERSION="3"
+export ROS_VERSION="2"
+export LD_LIBRARY_PATH="/opt/ros/humble/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH"
+export PYTHONPATH="/opt/ros/humble/lib/python3.10/site-packages:$PYTHONPATH"
+AMENT_CURRENT_PREFIX="/opt/ros/humble" _ament_prefix_sh_source_script "/opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash"
+export LD_LIBRARY_PATH="/opt/ros/humble/opt/rviz_ogre_vendor/lib:$LD_LIBRARY_PATH"
+export AMENT_PREFIX_PATH=${AMENT_PREFIX_PATH#:}
+export AMENT_PREFIX_PATH=${AMENT_PREFIX_PATH%:}
+export PYTHONPATH=${PYTHONPATH#:}
+export PYTHONPATH=${PYTHONPATH%:}
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH#:}
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH%:}
+export ROS_DISTRO=${ROS_DISTRO#:}
+export ROS_DISTRO=${ROS_DISTRO%:}
+export ROS_PYTHON_VERSION=${ROS_PYTHON_VERSION#:}
+export ROS_PYTHON_VERSION=${ROS_PYTHON_VERSION%:}
+export ROS_VERSION=${ROS_VERSION#:}
+export ROS_VERSION=${ROS_VERSION%:}'
+++++++ export AMENT_PREFIX_PATH=/opt/ros/humble:
+++++++ AMENT_PREFIX_PATH=/opt/ros/humble:
+++++++ export 'PATH=/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/MicrosoftCorporationII.WindowsSubsystemForLinux_2.7.10.0_x64__8wekyb3d8bbwe:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/nodejs/:/mnt/c/Users/Mukund/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/Mukund/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/Mukund/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/Mukund/AppData/Local/Programs/arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi/bin:/mnt/c/Users/Mukund/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Mukund/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Mukund/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Mukund/dev/flutter/bin:/mnt/c/Users/Mukund/.local/bin:/mnt/c/Users/Mukund/AppData/Roaming/npm:/mnt/c/qwen38/shim'
+++++++ PATH='/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/MicrosoftCorporationII.WindowsSubsystemForLinux_2.7.10.0_x64__8wekyb3d8bbwe:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/nodejs/:/mnt/c/Users/Mukund/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/Mukund/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/Mukund/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/Mukund/AppData/Local/Programs/arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi/bin:/mnt/c/Users/Mukund/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Mukund/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Mukund/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Mukund/dev/flutter/bin:/mnt/c/Users/Mukund/.local/bin:/mnt/c/Users/Mukund/AppData/Roaming/npm:/mnt/c/qwen38/shim'
+++++++ export PYTHONPATH=/opt/ros/humble/local/lib/python3.10/dist-packages:
+++++++ PYTHONPATH=/opt/ros/humble/local/lib/python3.10/dist-packages:
+++++++ export LD_LIBRARY_PATH=/opt/ros/humble/lib:
+++++++ LD_LIBRARY_PATH=/opt/ros/humble/lib:
+++++++ AMENT_CURRENT_PREFIX=/opt/ros/humble
+++++++ _ament_prefix_sh_source_script /opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash
+++++++ '[' -f /opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash ']'
+++++++ '[' -n '' ']'
+++++++ . /opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.bash
++++++++ type register-python-argcomplete3
+++++++++ register-python-argcomplete3 ros2
++++++++ eval '
+_python_argcomplete() {
+    local IFS=$'\''\013'\''
+    local SUPPRESS_SPACE=0
+    if compopt +o nospace 2> /dev/null; then
+        SUPPRESS_SPACE=1
+    fi
+    COMPREPLY=( $(IFS="$IFS" \
+                  COMP_LINE="$COMP_LINE" \
+                  COMP_POINT="$COMP_POINT" \
+                  COMP_TYPE="$COMP_TYPE" \
+                  _ARGCOMPLETE_COMP_WORDBREAKS="$COMP_WORDBREAKS" \
+                  _ARGCOMPLETE=1 \
+                  _ARGCOMPLETE_SUPPRESS_SPACE=$SUPPRESS_SPACE \
+                  "$1" 8>&1 9>&2 1>/dev/null 2>/dev/null) )
+    if [[ $? != 0 ]]; then
+        unset COMPREPLY
+    elif [[ $SUPPRESS_SPACE == 1 ]] && [[ "$COMPREPLY" =~ [=/:]$ ]]; then
+        compopt -o nospace
+    fi
+}
+complete -o nospace -o default -F _python_argcomplete "ros2"'
+++++++++ complete -o nospace -o default -F _python_argcomplete ros2
+++++++ AMENT_CURRENT_PREFIX=/opt/ros/humble
+++++++ _ament_prefix_sh_source_script /opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh
+++++++ '[' -f /opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh ']'
+++++++ '[' -n '' ']'
+++++++ . /opt/ros/humble/share/ros_environment/environment/0.ros_distro_check.sh
++++++++ '[' -n '' -a '' '!=' humble ']'
+++++++ export ROS_DISTRO=humble
+++++++ ROS_DISTRO=humble
+++++++ export ROS_LOCALHOST_ONLY=0
+++++++ ROS_LOCALHOST_ONLY=0
+++++++ export ROS_PYTHON_VERSION=3
+++++++ ROS_PYTHON_VERSION=3
+++++++ export ROS_VERSION=2
+++++++ ROS_VERSION=2
+++++++ export LD_LIBRARY_PATH=/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:
+++++++ LD_LIBRARY_PATH=/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:
+++++++ export PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:
+++++++ PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:
+++++++ AMENT_CURRENT_PREFIX=/opt/ros/humble
+++++++ _ament_prefix_sh_source_script /opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash
+++++++ '[' -f /opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash ']'
+++++++ '[' -n '' ']'
+++++++ . /opt/ros/humble/share/rosidl_cli/environment/rosidl-argcomplete.bash
++++++++ type register-python-argcomplete3
+++++++++ register-python-argcomplete3 rosidl
++++++++ eval '
+_python_argcomplete() {
+    local IFS=$'\''\013'\''
+    local SUPPRESS_SPACE=0
+    if compopt +o nospace 2> /dev/null; then
+        SUPPRESS_SPACE=1
+    fi
+    COMPREPLY=( $(IFS="$IFS" \
+                  COMP_LINE="$COMP_LINE" \
+                  COMP_POINT="$COMP_POINT" \
+                  COMP_TYPE="$COMP_TYPE" \
+                  _ARGCOMPLETE_COMP_WORDBREAKS="$COMP_WORDBREAKS" \
+                  _ARGCOMPLETE=1 \
+                  _ARGCOMPLETE_SUPPRESS_SPACE=$SUPPRESS_SPACE \
+                  "$1" 8>&1 9>&2 1>/dev/null 2>/dev/null) )
+    if [[ $? != 0 ]]; then
+        unset COMPREPLY
+    elif [[ $SUPPRESS_SPACE == 1 ]] && [[ "$COMPREPLY" =~ [=/:]$ ]]; then
+        compopt -o nospace
+    fi
+}
+complete -o nospace -o default -F _python_argcomplete "rosidl"'
+++++++++ complete -o nospace -o default -F _python_argcomplete rosidl
+++++++ export LD_LIBRARY_PATH=/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:
+++++++ LD_LIBRARY_PATH=/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:
+++++++ export AMENT_PREFIX_PATH=/opt/ros/humble:
+++++++ AMENT_PREFIX_PATH=/opt/ros/humble:
+++++++ export AMENT_PREFIX_PATH=/opt/ros/humble
+++++++ AMENT_PREFIX_PATH=/opt/ros/humble
+++++++ export PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:
+++++++ PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:
+++++++ export PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+++++++ PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages
+++++++ export LD_LIBRARY_PATH=/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:
+++++++ LD_LIBRARY_PATH=/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:
+++++++ export LD_LIBRARY_PATH=/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++++ LD_LIBRARY_PATH=/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib
+++++++ export ROS_DISTRO=humble
+++++++ ROS_DISTRO=humble
+++++++ export ROS_DISTRO=humble
+++++++ ROS_DISTRO=humble
+++++++ export ROS_PYTHON_VERSION=3
+++++++ ROS_PYTHON_VERSION=3
+++++++ export ROS_PYTHON_VERSION=3
+++++++ ROS_PYTHON_VERSION=3
+++++++ export ROS_VERSION=2
+++++++ ROS_VERSION=2
+++++++ export ROS_VERSION=2
+++++++ ROS_VERSION=2
++++++ unset _ament_ordered_commands
++++++ unset _ament_prefix_sh_source_script
++++++ unset _ament_prefix_sh_AMENT_CURRENT_PREFIX
++++ AMENT_SHELL=bash
++++ unset _path
++++ IFS=' 	
+'
++++ unset _prefix_setup_IFS
++++ unset _prefix_setup_AMENT_SHELL
++++ unset _UNIQUE_PREFIX_PATH
++++ unset AMENT_SHELL
++ export ROARM_MODEL=roarm_m3
++ ROARM_MODEL=roarm_m3
++ echo ROARM_MODEL=roarm_m3
+ROARM_MODEL=roarm_m3
++ cd /home/mukund/roarm_ws
++ colcon build --packages-select roarm_msgs
+Starting >>> roarm_msgs
+Finished <<< roarm_msgs [5.49s]
+
+Summary: 1 package finished [5.73s]
++ colcon build --packages-select moveit_servo
+Starting >>> moveit_servo
+--- stderr: moveit_servo
+moveit_servo: You did not request a specific build type: Choosing 'Release' for maximum performance
+---
+[Processing: moveit_servo]
+Finished <<< moveit_servo [40.6s]
+
+Summary: 1 package finished [40.7s]
+  1 package had stderr output: moveit_servo
++ colcon build --packages-select rviz_marker_tools
+[0.258s] WARNING:colcon.colcon_core.package_selection:Some selected packages are already built in one or more underlay workspaces:
+	'rviz_marker_tools' is in: /opt/ros/humble
+If a package in a merged underlay workspace is overridden and it installs headers, then all packages in the overlay must sort their include directories by workspace order. Failure to do so may result in build failures or undefined behavior at run time.
+If the overridden package is used by another package in any underlay, then the overriding package in the overlay must be API and ABI compatible or undefined behavior at run time may occur.
+
+If you understand the risks and want to override a package anyways, add the following to the command line:
+	--allow-overriding rviz_marker_tools
+
+This may be promoted to an error in a future release of colcon-override-check.
+Starting >>> rviz_marker_tools
+--- stderr: rviz_marker_tools
+rviz_marker_tools: You did not request a specific build type: Choosing 'Release' for maximum performance
+---
+Finished <<< rviz_marker_tools [8.04s]
+
+Summary: 1 package finished [8.18s]
+  1 package had stderr output: rviz_marker_tools
++ colcon build --packages-select moveit_task_constructor_msgs
+[0.224s] WARNING:colcon.colcon_core.package_selection:Some selected packages are already built in one or more underlay workspaces:
+	'moveit_task_constructor_msgs' is in: /opt/ros/humble
+If a package in a merged underlay workspace is overridden and it installs headers, then all packages in the overlay must sort their include directories by workspace order. Failure to do so may result in build failures or undefined behavior at run time.
+If the overridden package is used by another package in any underlay, then the overriding package in the overlay must be API and ABI compatible or undefined behavior at run time may occur.
+
+If you understand the risks and want to override a package anyways, add the following to the command line:
+	--allow-overriding moveit_task_constructor_msgs
+
+This may be promoted to an error in a future release of colcon-override-check.
+Starting >>> moveit_task_constructor_msgs
+Finished <<< moveit_task_constructor_msgs [6.33s]
+
+Summary: 1 package finished [6.46s]
++ colcon build --packages-select moveit_task_constructor_core
+[0.235s] WARNING:colcon.colcon_core.package_selection:Some selected packages are already built in one or more underlay workspaces:
+	'moveit_task_constructor_core' is in: /opt/ros/humble
+If a package in a merged underlay workspace is overridden and it installs headers, then all packages in the overlay must sort their include directories by workspace order. Failure to do so may result in build failures or undefined behavior at run time.
+If the overridden package is used by another package in any underlay, then the overriding package in the overlay must be API and ABI compatible or undefined behavior at run time may occur.
+
+If you understand the risks and want to override a package anyways, add the following to the command line:
+	--allow-overriding moveit_task_constructor_core
+
+This may be promoted to an error in a future release of colcon-override-check.
+Starting >>> moveit_task_constructor_core
+--- stderr: moveit_task_constructor_core
+moveit_task_constructor_core: You did not request a specific build type: Choosing 'Release' for maximum performance
+lto-wrapper: warning: using serial compilation of 12 LTRANS jobs
+---
+[Processing: moveit_task_constructor_core]
+[Processing: moveit_task_constructor_core]
+Finished <<< moveit_task_constructor_core [1min 9s]
+
+Summary: 1 package finished [1min 9s]
+  1 package had stderr output: moveit_task_constructor_core
++ colcon build --packages-select moveit_task_constructor_capabilities
+[0.229s] WARNING:colcon.colcon_core.package_selection:Some selected packages are already built in one or more underlay workspaces:
+	'moveit_task_constructor_capabilities' is in: /opt/ros/humble
+If a package in a merged underlay workspace is overridden and it installs headers, then all packages in the overlay must sort their include directories by workspace order. Failure to do so may result in build failures or undefined behavior at run time.
+If the overridden package is used by another package in any underlay, then the overriding package in the overlay must be API and ABI compatible or undefined behavior at run time may occur.
+
+If you understand the risks and want to override a package anyways, add the following to the command line:
+	--allow-overriding moveit_task_constructor_capabilities
+
+This may be promoted to an error in a future release of colcon-override-check.
+Starting >>> moveit_task_constructor_capabilities
+--- stderr: moveit_task_constructor_capabilities
+moveit_task_constructor_capabilities: You did not request a specific build type: Choosing 'Release' for maximum performance
+---
+Finished <<< moveit_task_constructor_capabilities [15.7s]
+
+Summary: 1 package finished [15.8s]
+  1 package had stderr output: moveit_task_constructor_capabilities
++ colcon build --packages-select moveit_task_constructor_visualization
+Starting >>> moveit_task_constructor_visualization
+--- stderr: moveit_task_constructor_visualization
+moveit_task_constructor_visualization: You did not request a specific build type: Choosing 'Release' for maximum performance
+---
+[Processing: moveit_task_constructor_visualization]
+Finished <<< moveit_task_constructor_visualization [42.2s]
+
+Summary: 1 package finished [42.3s]
+  1 package had stderr output: moveit_task_constructor_visualization
++ colcon build --packages-select roarm_moveit_cmd
+Starting >>> roarm_moveit_cmd
+--- stderr: roarm_moveit_cmd
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/roarm_server.hpp:7,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:1:
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/solver.hpp:168: warning: "ARM_L3_LENGTH_MM_A_0" redefined
+  168 | #define ARM_L3_LENGTH_MM_A_0    144.49
+      | 
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/roarm_server.hpp:7,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:1:
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/solver.hpp:11: note: this is the location of the previous definition
+   11 | #define ARM_L3_LENGTH_MM_A_0  280.15 //214
+      | 
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/roarm_server.hpp:7,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:1:
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/solver.hpp:169: warning: "ARM_L3_LENGTH_MM_B_0" redefined
+  169 | #define ARM_L3_LENGTH_MM_B_0    0
+      | 
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/roarm_server.hpp:7,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:1:
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/solver.hpp:12: note: this is the location of the previous definition
+   12 | #define ARM_L3_LENGTH_MM_B_0  1.73
+      | 
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/roarm_server.hpp:7,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:1:
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/solver.hpp:172: warning: "ARM_L4_LENGTH_MM_A" redefined
+  172 | #define ARM_L4_LENGTH_MM_A      171.67
+      | 
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/roarm_server.hpp:7,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:1:
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/solver.hpp:13: note: this is the location of the previous definition
+   13 | #define ARM_L4_LENGTH_MM_A  67.85
+      | 
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/roarm_server.hpp:7,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:1:
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/solver.hpp:173: warning: "ARM_L4_LENGTH_MM_B" redefined
+  173 | #define ARM_L4_LENGTH_MM_B  13.69
+      | 
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/roarm_server.hpp:7,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:1:
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/solver.hpp:14: note: this is the location of the previous definition
+   14 | #define ARM_L4_LENGTH_MM_B  5.98
+      | 
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/roarm_server.hpp:7,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:1:
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/solver.hpp: In function ‘std::array<double, 5> roarm_m2::computePosbyJointRad(double, double, double, double)’:
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/solver.hpp:149:53: warning: narrowing conversion of ‘roarm_m2::EEMode’ from ‘bool’ to ‘double’ [-Wnarrowing]
+  149 |   std::array<double, 5> result = {lastX,lastY,lastZ,EEMode,lastT};
+      |                                                     ^~~~~~
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp: In function ‘void move_joint_cmd_service(std::shared_ptr<roarm_msgs::srv::MoveJointCmd_Request_<std::allocator<void> > >, std::shared_ptr<roarm_msgs::srv::MoveJointCmd_Response_<std::allocator<void> > >)’:
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:92:89: warning: ‘using MoveItErrorCode = class moveit::core::MoveItErrorCode’ is deprecated: Use moveit::core::MoveItErrorCode [-Wdeprecated-declarations]
+   92 |   bool success = (move_group.plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+      |                                                                                         ^~~~~~~
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/roarm_server.hpp:10,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:1:
+/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7: note: declared here
+   71 | using MoveItErrorCode [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+      |       ^~~~~~~~~~~~~~~
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp: In function ‘void move_line_cmd_service(std::shared_ptr<roarm_msgs::srv::MoveLineCmd_Request_<std::allocator<void> > >, std::shared_ptr<roarm_msgs::srv::MoveLineCmd_Response_<std::allocator<void> > >, std::shared_ptr<RobotPoseSubscription>)’:
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:128:105: warning: ‘using MoveItErrorCode = class moveit::core::MoveItErrorCode’ is deprecated: Use moveit::core::MoveItErrorCode [-Wdeprecated-declarations]
+  128 |       bool roarm_m2_success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+      |                                                                                                         ^~~~~~~
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/roarm_server.hpp:10,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:1:
+/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7: note: declared here
+   71 | using MoveItErrorCode [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+      |       ^~~~~~~~~~~~~~~
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:145:105: warning: ‘using MoveItErrorCode = class moveit::core::MoveItErrorCode’ is deprecated: Use moveit::core::MoveItErrorCode [-Wdeprecated-declarations]
+  145 |       bool roarm_m3_success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+      |                                                                                                         ^~~~~~~
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/roarm_server.hpp:10,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:1:
+/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7: note: declared here
+   71 | using MoveItErrorCode [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+      |       ^~~~~~~~~~~~~~~
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp: In function ‘void move_circle_cmd_service(std::shared_ptr<roarm_msgs::srv::MoveCircleCmd_Request_<std::allocator<void> > >, std::shared_ptr<roarm_msgs::srv::MoveCircleCmd_Response_<std::allocator<void> > >, std::shared_ptr<RobotPoseSubscription>)’:
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:183:105: warning: ‘using MoveItErrorCode = class moveit::core::MoveItErrorCode’ is deprecated: Use moveit::core::MoveItErrorCode [-Wdeprecated-declarations]
+  183 |       bool roarm_m2_success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+      |                                                                                                         ^~~~~~~
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/roarm_server.hpp:10,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:1:
+/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7: note: declared here
+   71 | using MoveItErrorCode [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+      |       ^~~~~~~~~~~~~~~
+/home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:200:105: warning: ‘using MoveItErrorCode = class moveit::core::MoveItErrorCode’ is deprecated: Use moveit::core::MoveItErrorCode [-Wdeprecated-declarations]
+  200 |       bool roarm_m3_success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+      |                                                                                                         ^~~~~~~
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/include/roarm_moveit_cmd/roarm_server.hpp:10,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_cmd/src/roarmserver.cpp:1:
+/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7: note: declared here
+   71 | using MoveItErrorCode [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+      |       ^~~~~~~~~~~~~~~
+---
+Finished <<< roarm_moveit_cmd [16.6s]
+
+Summary: 1 package finished [16.7s]
+  1 package had stderr output: roarm_moveit_cmd
++ colcon build --packages-select roarm_moveit_ikfast_plugins
+Starting >>> roarm_moveit_ikfast_plugins
+Finished <<< roarm_moveit_ikfast_plugins [17.1s]
+
+Summary: 1 package finished [17.2s]
++ colcon build --packages-select roarm_moveit_mtc_demo
+Starting >>> roarm_moveit_mtc_demo
+--- stderr: roarm_moveit_mtc_demo
+roarm_moveit_mtc_demo: You did not request a specific build type: Choosing 'Release' for maximum performance
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_mtc_demo/include/roarm_moveit_mtc_demo/pick_place_task.h:61,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_mtc_demo/src/pick_place_task.cpp:38:
+/home/mukund/roarm_ws/build/roarm_moveit_mtc_demo/include/pick_place_parameters.hpp:1:144: note: ‘#pragma message: #include "pick_place_parameters.hpp" is deprecated. Use #include <roarm_moveit_mtc_demo/pick_place_parameters.hpp> instead.’
+    1 | #pragma message("#include \"pick_place_parameters.hpp\" is deprecated. Use #include <roarm_moveit_mtc_demo/pick_place_parameters.hpp> instead.")
+      |                                                                                                                                                ^
+In file included from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_mtc_demo/include/roarm_moveit_mtc_demo/pick_place_task.h:61,
+                 from /home/mukund/roarm_ws/src/roarm_main/roarm_moveit_mtc_demo/src/pick_place.cpp:41:
+/home/mukund/roarm_ws/build/roarm_moveit_mtc_demo/include/pick_place_parameters.hpp:1:144: note: ‘#pragma message: #include "pick_place_parameters.hpp" is deprecated. Use #include <roarm_moveit_mtc_demo/pick_place_parameters.hpp> instead.’
+    1 | #pragma message("#include \"pick_place_parameters.hpp\" is deprecated. Use #include <roarm_moveit_mtc_demo/pick_place_parameters.hpp> instead.")
+      |                                                                                                                                                ^
+---
+Finished <<< roarm_moveit_mtc_demo [21.0s]
+
+Summary: 1 package finished [21.1s]
+  1 package had stderr output: roarm_moveit_mtc_demo
++ colcon build --packages-select roarm_moveit_servo
+Starting >>> roarm_moveit_servo
+--- stderr: roarm_moveit_servo
+CMake Error at CMakeLists.txt:17 (find_package):
+  By not providing "Findroarm_msgs.cmake" in CMAKE_MODULE_PATH this project
+  has asked CMake to find a package configuration file provided by
+  "roarm_msgs", but CMake did not find one.
+
+  Could not find a package configuration file provided by "roarm_msgs" with
+  any of the following names:
+
+    roarm_msgsConfig.cmake
+    roarm_msgs-config.cmake
+
+  Add the installation prefix of "roarm_msgs" to CMAKE_PREFIX_PATH or set
+  "roarm_msgs_DIR" to a directory containing one of the above files.  If
+  "roarm_msgs" provides a separate development package or SDK, be sure it has
+  been installed.
+
+
+---
+Failed   <<< roarm_moveit_servo [8.67s, exited with code 1]
+
+Summary: 0 packages finished [8.81s]
+  1 package failed: roarm_moveit_servo
+  1 package had stderr output: roarm_moveit_servo
++ colcon build --packages-select roarm_description roarm_driver roarm_moveit --symlink-install
+Starting >>> roarm_description
+Starting >>> roarm_driver
+Finished <<< roarm_driver [0.78s]
+Finished <<< roarm_description [1.33s]
+Starting >>> roarm_moveit
+Finished <<< roarm_moveit [1.13s]
+
+Summary: 3 packages finished [2.59s]
++ echo 'source /home/mukund/roarm_ws/install/setup.bash'
++ echo 'export ROARM_MODEL=roarm_m3'
++ echo BUILD_DONE
+BUILD_DONE
